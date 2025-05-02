@@ -1,45 +1,38 @@
 ---
-title:
+title: Projects
 layout: default
 permalink: /projects/
 published: true
 ---
 
-
 <div class="ProjectContainer">
-
-	<div class="gallery">
-
-
-  {% for project in site.projects %}
-
-  {% if project.redirect %}
-  <div class="projectTile">
-          <a href="{{ project.redirect }}" target="_blank">
-          <span>
+  <div class="gallery">
+    {% for project in site.projects %}
+      {% if project.redirect %}
+        <div
+          class="projectTile custom-bg"
+          style="background-image: url('{{ project.image | relative_url }}')"
+        >
+          <a href="{{ project.redirect }}" target="_blank" rel="noopener">
+            <span>
               <h2>{{ project.title }}</h2>
-              <br/>
               <p>{{ project.description }}</p>
-          </span>
+            </span>
           </a>
-  </div>
-
-  {% else %}
-
-  <div class="projectTile">
-          <a href="{{ project.url | prepend: site.baseurl | prepend: site.url }}">
-          <span>
+        </div>
+      {% else %}
+        <div
+          class="projectTile custom-bg"
+          style="background-image: url('{{ project.image | relative_url }}')"
+        >
+          <a href="{{ project.url | prepend: site.baseurl | prepend: site.url }}" target="_blank" rel="noopener">
+            <span>
               <h2>{{ project.title }}</h2>
-              <br/>
               <p>{{ project.description }}</p>
-          </span>
+            </span>
           </a>
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
-
-  {% endif %}
-
-  {% endfor %}
-
-	</div>
-
 </div>

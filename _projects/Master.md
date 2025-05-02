@@ -1,7 +1,8 @@
 ---
 layout: post
-title: A longer Project Title
+title: Multi-Agent RL
 description: short project description
+image: "/assets/images/multi-agent.png"
 ---
 
 Example modified from [here](http://www.unexpected-vortices.com/sw/rippledoc/quick-markdown-example.html){:target="_blank"}.

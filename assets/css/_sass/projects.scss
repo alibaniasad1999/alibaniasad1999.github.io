@@ -8,22 +8,56 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  /* Compensate for excess margin on outer gallery flex items */
-  margin: -1rem -1rem;
+  margin: -1rem;
+}
+.gallery > .projectTile {
+  margin: 1rem;
 }
 
 .projectTile {
-  /* Minimum width of 200px and grow to fit available space */
+  /* Flexible tiles */
   flex: 1 0 200px;
   border-radius: 15px;
-  background: $projectbox;
-  @media (prefers-color-scheme: dark) {
-    background: $projectbox-dark;
-  }
+  background-color: $projectbox;
+  /* Use CSS variable for dynamic image, fallback to default */
+  background-image: var(--tile-bg, url('path/to/your-image.jpg'));
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
   height: 200px;
-  width: 100%;
   overflow: hidden;
   display: table;
+
+  /* Dark mode defaults */
+  @media (prefers-color-scheme: dark) {
+    background-color: $projectbox-dark;
+    background-image: var(--tile-bg, url('path/to/your-image-dark.jpg'));
+  }
+
+  /* Dim background option */
+  &.dimmed {
+    filter: brightness(0.8);
+  }
+
+  /* Overlay for contrast */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 15px;
+  }
+}
+
+.projectTile.custom-bg {
+  /* Inline override example: 
+     <div class="projectTile custom-bg" 
+          style="--tile-bg: url('/path/another.jpg')">
+  */
+  background-size: cover;
+  background-position: center;
 }
 
 .projectTile a {
@@ -31,91 +65,75 @@
   vertical-align: middle;
   text-align: center;
   cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 
 .projectTile a span {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent text */
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.projectTile a span h2,
+.projectTile a span p {
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
 }
 
 .projectTile a span h2 {
   font-size: 1.5rem;
-  padding: 1rem;
-  color: $projectbox-text;
+}
+
+.projectTile a span p {
+  display: none;
+  font-size: 1.2rem;
 }
 
 .projectTile:hover a span h2 {
   display: none;
 }
 
-.projectTile a span p {
-  display: none;
-}
-
 .projectTile:hover a span p {
-  font-size: 1.2rem;
-  display: flex;
-  padding: 1rem;
-  color: $projectbox-text;
+  display: block;
 }
 
+/* Responsive: phone */
 @include media-query($on-phone) {
-  @media screen and (max-width: $on-phone){
-
-    .projectTile {
-      height: 80px;
-    }
-
-    .projectTile a span h2 {
-      font-size: 1.2rem;
-    }
-
-    .projectTile:hover a span p {
-      display: none;
-    }
-
-    .projectTile:hover a span h2 {
-      display: flex;
-    }
-
-
+  @media screen and (max-width: $on-phone) {
+    .projectTile { height: 80px; }
+    .projectTile a span h2 { font-size: 1.2rem; }
+    .projectTile:hover a span p { display: none; }
+    .projectTile:hover a span h2 { display: block; }
   }
 }
 
+/* Responsive: palm */
 @include media-query($on-palm) {
-  @media screen and (max-width: $on-palm){
-
-    .projectTile {
-      height: 100px;
-    }
-
-    .projectTile a span h2 {
-      font-size: 1.3rem;
-    }
-
-    .projectTile:hover a span p {
-      display: none;
-    }
-
-    .projectTile:hover a span h2 {
-      display: flex;
-    }
-
+  @media screen and (max-width: $on-palm) {
+    .projectTile { height: 100px; }
+    .projectTile a span h2 { font-size: 1.3rem; }
+    .projectTile:hover a span p { display: none; }
+    .projectTile:hover a span h2 { display: block; }
   }
 }
 
-
+/* Grid support */
 @supports (display: grid) {
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 2rem;
-  }
-
-  .gallery,
-  .gallery-item {
     margin: 0;
   }
 }
 
-//Based on: https://codepen.io/GeorgePark/pen/vdqYom
+/* Usage in HTML/Jekyll:
+  <div class="projectTile" 
+       style="--tile-bg: url('{{ project.image | default: '/assets/images/default.jpg' }}')">
+*/
