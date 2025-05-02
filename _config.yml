@@ -1,11 +1,15 @@
 ### your site title here
 
-title: Ali Baniasad
-description: subtitle | affiliations | motto
+title: Ali BaniAsad
+description: Autonomous Systems & RL Researcher | CNAV Lab Head | Always learning.
+
+
+
+
 
 baseurl: "" #name of GitHub repository
 url: "https://alibaniasad1999.github.io" #custom url to be used instead of GitHub repository
-email: #
+email: "alibaniasad1999@yahoo.com"
 
 # Pagination
 paginate: 4
@@ -14,15 +18,15 @@ paginate_path: /blog/page:num/
 
 # Social media links in footer
 linkedin: "alibaniasad1999/"
-google_scholar: "#"
-stackoverflow: "#"
-github: "#"
-researchgate: "#"
-orcid: "#"
-quora: "#"
-instagram: "#"
-facebook: "#"
-bluesky: "#"
+google_scholar: "KeKpSvEAAAAJ&hl=en"
+# stackoverflow: "#"
+github: "alibaniasad1999"
+# researchgate: "#"
+orcid: "0009-0005-8094-1728"
+# quora: "#"
+# instagram: "#"
+# facebook: "#"
+# bluesky: "#"
 
 # Markdown
 highlighter: rouge
@@ -42,7 +46,8 @@ compress_html:
   profile: false
   startings: []
 
-#collection
+# _config.yml
+
 collections:
   projects:
     output: true
@@ -54,6 +59,17 @@ collections:
       - project4.md
       - project5.md
       - project6.md
+
+  publications:
+    output: true
+    permalink: /publications/:name/
+    order:
+      - smith2024.md
+
+
+
+
+
 
 sass:
   sass_dir: /assets/css/_sass
