@@ -3,7 +3,7 @@ layout: about
 permalink: /
 profile:
   align: right
-  image: profile.png
+  image: baniasad.jpeg
 published: true
 ---
 
