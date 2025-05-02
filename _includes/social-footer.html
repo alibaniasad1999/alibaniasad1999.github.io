@@ -90,4 +90,22 @@ target="_blank">
 {%- endif -%}
 
 
+{%- if site.google_scholar -%}
+  <a
+    title="{{ _locale_string_follow | replace: '[NAME]', 'Google Scholar' }}"
+    class="social-button google-scholar"
+    itemprop="sameAs"
+    href="https://scholar.google.com/citations?user={{ site.google_scholar }}"
+    target="_blank"
+  >
+    {%- comment -%}
+      FontAwesome doesn’t include a “google-scholar” brand icon by default,
+      so we’ll use the graduation-cap as a proxy.
+    {%- endcomment -%}
+    <i class="fas fa-graduation-cap"></i>
+  </a>
+{%- endif -%}
+
+
+
 </div>

@@ -13,7 +13,8 @@ permalink: /blog/:year/:title/
 paginate_path: /blog/page:num/
 
 # Social media links in footer
-linkedin: "https://linkedin.com/in/alibaniasad1999/"
+linkedin: "alibaniasad1999/"
+google_scholar: "#"
 stackoverflow: "#"
 github: "#"
 researchgate: "#"
