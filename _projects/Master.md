@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Multi-Agent RL
-description: short project description
+description: Multi-agent Reinforcing Learning based on Zero-sum Same.
 image: "/assets/images/multi-agent.png"
 ---
 
