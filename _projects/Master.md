@@ -27,6 +27,18 @@ window.MathJax = {
 **GitHub:** <https://github.com/your-org/rl-spaceflight>
 
 A research sandbox that marries a high-fidelity nonlinear simulator with four state-of-the-art continuous-action RL agents, all wired for **multi-agent, zero-sum play**.  
+<!-- centred, autoplaying demo video -->
+<div style="text-align:center;">
+  <video
+      src="/assets/video/MARL.mp4"
+      width="640" height="360"
+      autoplay muted loop playsinline
+      style="display:block; margin:0 auto;">
+    <!-- Fallback text for very old browsers -->
+    Your browser doesn’t support HTML5 video.  
+    <a href="/assets/video/MARL.mp4">Download the clip</a>.
+  </video>
+</div>
 Swap agents with a flag, flip between cooperative and adversarial reward structures, and benchmark straight away.
 
 | Agent | Multi-agent flavour | Why it’s interesting |
@@ -47,18 +59,7 @@ Many real-world control problems are effectively games:
 * **Competitive resource allocation** – multiple robots vying for the same power or bandwidth budget  
 
 Model-free RL lifts the need for hand-crafted opponent models; differential-game extensions push agents toward robust **Nash equilibria**, not brittle one-shot optima.
-<!-- centred, autoplaying demo video -->
-<div style="text-align:center;">
-  <video
-      src="/assets/video/MARL.mp4"
-      width="640" height="360"
-      autoplay muted loop playsinline
-      style="display:block; margin:0 auto;">
-    <!-- Fallback text for very old browsers -->
-    Your browser doesn’t support HTML5 video.  
-    <a href="/assets/video/MARL.mp4">Download the clip</a>.
-  </video>
-</div>
+
 ---
 
 ## Reinforcement Learning — quick primer
@@ -70,7 +71,7 @@ Reinforcement learning (RL) is a paradigm in which an *agent* discovers an optim
 At each discrete time $t$ the agent:
 
 1. **Observes** a state $s_t$  
-2. **Acts** using policy $a_t\sim\pi_\theta(\,\cdot\,|s_t)$  
+2. **Acts** using policy $a_t\sim\pi_\theta(\,\cdot\,\mid s_t)$  
 3. **Receives** a reward $r_t$ and the next state $s_{t+1}$
 
 This loop repeats until a *terminal* condition resets the episode.  
@@ -89,7 +90,7 @@ Mathematically, the problem is cast as a **Markov Decision Process (MDP)**
 $\langle S,A,P,r,q_0,\gamma\rangle$:
 
 * $S,\;A$ – state and action sets  
-* $P(s'|s,a)$ – transition kernel  
+* $P(s'\mid s,a)$ – transition kernel  
 * $r(s)\in\mathbb R$ – reward  
 * $q_0$ – initial-state distribution  
 * $\gamma\in[0,1]$ – discount factor
@@ -112,19 +113,19 @@ $$
 
 ---
 
-## Typical workflow
+<!-- ## Typical workflow
 
 1. **Choose a game style** – pursuit-evasion, mix-cooperative, disturbance-injection  
 2. **Select an agent pair** – pit TD3 against SAC, or run self-play with DDPG  
-3. **Train → Evaluate → Compare** on ∆reward, constraint violations, re-planning latency
+3. **Train → Evaluate → Compare** on reward, constraint violations, re-planning latency
 
-Actors are deterministic at test time—policies reduce to matrix multiplies; no iterative solvers or lookup tables.
+Actors are deterministic at test time—policies reduce to matrix multiplies; no iterative solvers or lookup tables. -->
 
----
+<!-- --- -->
 
 ## Highlights
 
-* **3-D pursuit-evasion:** TD3 captures the evader 12 % faster than SAC; SAC invents evasive spirals unseen in scripted tactics  
+<!-- * **3-D pursuit-evasion:** TD3 captures the evader 12 % faster than SAC; SAC invents evasive spirals unseen in scripted tactics   -->
 * **Robust control:** DDPG shrugs off ±25 % actuator bias that destabilises single-agent PPO  
 * **Generalisation:** All agents keep > 90 % reward when dynamics parameters shift by ±10 %
 
