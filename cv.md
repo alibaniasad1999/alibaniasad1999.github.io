@@ -20,11 +20,12 @@ Download CV
 </object> -->
 <section class="cv">
   <h2>Curriculum Vitae</h2>
-  <p><a href="{{ '/assets/Ali-Baniasad-CV.pdf' | relative_url }}" download>Download CV (PDF)</a></p>
+  <p><a href="https://cdn.jsdelivr.net/gh/alibaniasad1999/CV@main/Ali-Baniasad-CV/Ali-Baniasad-CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a></p>
   <iframe
-    src="{{ '/assets/Ali-Baniasad-CV.pdf' | relative_url }}#view=FitH"
+    src="https://cdn.jsdelivr.net/gh/alibaniasad1999/CV@main/Ali-Baniasad-CV/Ali-Baniasad-CV.pdf#view=FitH"
     title="Ali Baniasad CV"
     style="width:100%; height:75vh; border:none;"
     loading="lazy"
   ></iframe>
 </section>
+
