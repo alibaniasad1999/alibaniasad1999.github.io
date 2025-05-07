@@ -43,11 +43,11 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
-    sort_by: order        # Jekyll will sort by this front-matter key
-    order:                # (optional) explicit list, kept for reference
-      - Master.md
-      - INS-AI.md
-      - LQDG.md
+    # sort_by: order        # Jekyll will sort by this front-matter key
+    # order:                # (optional) explicit list, kept for reference
+    #   - Master.md
+    #   - INS-AI.md
+    #   - LQDG.md
 
 # Sass
 sass:
