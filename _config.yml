@@ -55,7 +55,8 @@ collections:
     order:
       # - shortProject.md
       - Master.md
-      - longerProjectTitle copy.md
+      - INS-AI.md
+      - LQDG.md
       # - redirect.md
       # - project4.md
       # - project5.md
@@ -86,6 +87,11 @@ include:
 exclude:
   - README.md
   - LICENSE.md
+  - _projects/project4.md
+  - _projects/project5.md
+  - _projects/project6.md
+  - _projects/redirect.md
+  - _projects/shortProject.md
 
 plugins:
   - jekyll-seo-tag

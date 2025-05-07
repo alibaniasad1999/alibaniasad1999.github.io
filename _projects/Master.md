@@ -5,7 +5,7 @@ description: Multi-agent Reinforcing Learning based on Zero-sum Same.
 image: "/assets/images/multi-agent-light.jpeg"
 ---
 
-
+<h1><i class="fa-solid fa-chess"></i>  Multi-Agent Reinforcement-Learning</h1>
 <!-- _includes/head-custom.html  (or drop straight into your default layout) -->
 <script>
 window.MathJax = {
@@ -22,9 +22,9 @@ window.MathJax = {
       crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-<h1><i class="fas fa-chess-knight"></i> Multi-Agent Reinforcement-Learning</h1>
 
-**GitHub:** <https://github.com/your-org/rl-spaceflight>
+
+**GitHub:** <https://github.com/alibaniasad1999/master-thesis>
 
 A research sandbox that marries a high-fidelity nonlinear simulator with four state-of-the-art continuous-action RL agents, all wired for **multi-agent, zero-sum play**.  
 <!-- centred, autoplaying demo video -->
