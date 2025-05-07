@@ -1,14 +1,11 @@
-### your site title here
+# -------------------------------------------
+# _config.yml  —  properly formatted YAML
+# -------------------------------------------
+title: "Ali BaniAsad"
+description: "Autonomous Systems & RL Researcher | CNAV Lab Head | Always learning."
 
-title: Ali BaniAsad
-description: Autonomous Systems & RL Researcher | CNAV Lab Head | Always learning.
-
-
-
-
-
-baseurl: "" #name of GitHub repository
-url: "https://alibaniasad1999.github.io" #custom url to be used instead of GitHub repository
+baseurl: ""            # name of GitHub repository
+url: "https://alibaniasad1999.github.io"
 email: "alibaniasad1999@yahoo.com"
 
 # Pagination
@@ -19,14 +16,8 @@ paginate_path: /blog/page:num/
 # Social media links in footer
 linkedin: "alibaniasad1999/"
 google_scholar: "KeKpSvEAAAAJ&hl=en"
-# stackoverflow: "#"
 github: "alibaniasad1999"
-# researchgate: "#"
 orcid: "0009-0005-8094-1728"
-# quora: "#"
-# instagram: "#"
-# facebook: "#"
-# bluesky: "#"
 
 # Markdown
 highlighter: rouge
@@ -37,7 +28,8 @@ analytics:
 
 # optimization -> compress.html
 compress_html:
-  clippings: [html,div, p, ul, td, h1, h2, h3, h4,link, meta, footer, nav, img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
+  clippings: [html, div, p, ul, td, h1, h2, h3, h4, link, meta, footer, nav,
+              img, header, hr, br, head, style, li, ul, ol, time, main, script, title]
   comments: ["<!-- ", " -->"]
   endings: [all]
   ignore:
@@ -46,19 +38,18 @@ compress_html:
   profile: false
   startings: []
 
-# _config.yml
-
+# Collections
 collections:
   projects:
     output: true
     permalink: /projects/:name/
-    sort_by: order   # ← add this line  
-    order:
+    sort_by: order        # Jekyll will sort by this front-matter key
+    order:                # (optional) explicit list, kept for reference
       - Master.md
       - INS-AI.md
       - LQDG.md
 
-
+# Sass
 sass:
   sass_dir: /assets/css/_sass
   style: compressed
