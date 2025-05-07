@@ -3,6 +3,8 @@ title: Projects
 layout: default
 permalink: /projects/
 published: true
+sort_by:    order           # ← use the numbers above
+sort_order: ascending       # ← 1, 2, 3…
 ---
 
 <div class="ProjectContainer">
