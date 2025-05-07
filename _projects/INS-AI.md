@@ -1,6 +1,7 @@
 ---
 layout: post
 title: INS-AI
+order: 2
 description: Neural‑Network‑Aided Autonomous Vehicle Navigation Without GPS.
 image: "/assets/images/ins-ai.jpeg"
 ---

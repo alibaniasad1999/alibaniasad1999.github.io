@@ -1,6 +1,7 @@
 ---
 layout: post
 title: LQIR-DG
+order: 3
 description: Differential Game-Based Controller
 image: "/assets/images/LQDG.jpeg"
 ---

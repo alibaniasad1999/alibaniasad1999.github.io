@@ -1,11 +1,9 @@
 ---
 layout: post
 title: Multi-Agent RL
+order: 1
 description: Multi-agent Reinforcing Learning based on Zero-sum Same.
 image: "/assets/images/multi-agent-light.jpeg"
-order: 1
-sort_by:    order         # ← NEW
-sort_order: ascending     # ← NEW
 ---
 
 <h1><i class="fa-solid fa-chess"></i>  Multi-Agent Reinforcement-Learning</h1>
