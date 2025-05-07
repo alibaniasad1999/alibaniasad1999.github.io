@@ -52,6 +52,7 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
+    sort_by: order   # ← add this line  
     order:
       - Master.md
       - INS-AI.md
