@@ -18,14 +18,18 @@ Download CV
     <a href="{{ '/assets/Ali-Baniasad-CV.pdf' | relative_url }}">Download the PDF</a> instead.
   </p>
 </object> -->
-<section class="cv">
-  <h2>Curriculum Vitae</h2>
-  <p><a href="https://cdn.jsdelivr.net/gh/alibaniasad1999/CV@main/Ali-Baniasad-CV/Ali-Baniasad-CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a></p>
-  <iframe
-    src="https://cdn.jsdelivr.net/gh/alibaniasad1999/CV@main/Ali-Baniasad-CV/Ali-Baniasad-CV.pdf#view=FitH"
-    title="Ali Baniasad CV"
-    style="width:100%; height:75vh; border:none;"
-    loading="lazy"
-  ></iframe>
-</section>
+<p>
+  <a
+    href="https://cdn.jsdelivr.net/gh/alibaniasad1999/CV@main/Ali-Baniasad-CV/Ali-Baniasad-CV.pdf?v=20250508"
+    target="_blank"
+    rel="noopener"
+  >Download CV (PDF)</a>
+</p>
+<iframe
+  src="https://cdn.jsdelivr.net/gh/alibaniasad1999/CV@main/Ali-Baniasad-CV/Ali-Baniasad-CV.pdf?v=20250508#view=FitH"
+  title="Ali Baniasad CV"
+  style="width:100%; height:75vh; border:none;"
+  loading="lazy"
+></iframe>
+
 
