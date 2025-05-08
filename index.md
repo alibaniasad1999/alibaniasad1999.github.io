@@ -15,7 +15,7 @@ The social-icons footer can be used to link profiles from GitHub, OrcID and Reas
 
 PS: If you liked the theme, do star it on GitHub! -->
 
-I am a specializing in autonomous systems and reinforcement learning. With an M.Sc. from Sharif University of Technology, my work bridges control theory and AI—in particular, developing embedded RL controllers that outperform classical methods under real-world constraints. I was honored with the Best B.Sc. Thesis Award from the Iranian Aerospace Society for my undergraduate research.
+I am Ali BaniAsad, an M.S. student in Aerospace Engineering at Sharif University of Technology. My research interests lie in reinforcement learning, robotics, multi-agent systems, and automatic control. I am passionate about advancing technology in the fields of AI and robotics, with a focus on embedded machine learning and game theory. Explore my work, research, and projects, and feel free to get in touch!
 
 <!-- ### Also, check out:
 
