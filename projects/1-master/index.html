@@ -1,0 +1,521 @@
+<link rel="icon" type="image/png" href="/bai.png">
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link rel="stylesheet" href="/assets/css/main.css">
+
+        <h1 class="post-headline">Ali BaniAsad</h1>
+        <h3 class="post-description">Autonomous Systems & RL Researcher | CNAV Lab Head | Always learning.</h3>
+
+        <div class="links scroll">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <!-- <a href="/research/">Research</a> -->
+        <a href="/projects/">Projects</a>
+        <a href="/teaching/">Teaching & CNAV</a>
+        <a href="/cv/">CV</a>
+        <!-- <a href="/publications/">Publications</a>  -->
+        <!-- <a href="/blog/">Blog</a>
+        <a href="/archive/">Archive</a> -->
+</div>
+
+
+        <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Multi-Agent RL | Ali BaniAsad</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Multi-Agent RL" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Multi-agent Reinforcing Learning based on Zero-sum Same." />
+<meta property="og:description" content="Multi-agent Reinforcing Learning based on Zero-sum Same." />
+<link rel="canonical" href="https://alibaniasad1999.github.io/projects/1-master/" />
+<meta property="og:url" content="https://alibaniasad1999.github.io/projects/1-master/" />
+<meta property="og:site_name" content="Ali BaniAsad" />
+<meta property="og:image" content="https://alibaniasad1999.github.io/assets/images/multi-agent-light.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-05-26T11:29:20+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://alibaniasad1999.github.io/assets/images/multi-agent-light.jpeg" />
+<meta property="twitter:title" content="Multi-Agent RL" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-05-26T11:29:20+00:00","datePublished":"2025-05-26T11:29:20+00:00","description":"Multi-agent Reinforcing Learning based on Zero-sum Same.","headline":"Multi-Agent RL","image":"https://alibaniasad1999.github.io/assets/images/multi-agent-light.jpeg","mainEntityOfPage":{"@type":"WebPage","@id":"https://alibaniasad1999.github.io/projects/1-master/"},"url":"https://alibaniasad1999.github.io/projects/1-master/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+        <!-- insert favicons, used https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+
+        <!-- MathJax -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+     processEscapes: true
+    }
+  });
+</script>
+
+
+        <!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
+        <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v6.7.2/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+
+    </head>
+
+    <body>
+        <main>
+            <article>
+                <h1 class="post-headline">Multi-Agent RL</h1>
+<p class="meta"><small>May 26, 2025</small></p>
+
+<h1>
+<i class="fa-solid fa-chess"></i>  Multi-Agent Reinforcement-Learning</h1>
+<!-- _includes/head-custom.html  (or drop straight into your default layout) -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-TJk9a38m…(truncated)…" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<p><strong>GitHub:</strong> <a href="https://github.com/alibaniasad1999/master-thesis" target="_blank" rel="noopener noreferrer">https://github.com/alibaniasad1999/master-thesis</a></p>
+
+<p>A research sandbox that marries a high-fidelity nonlinear simulator with four state-of-the-art continuous-action RL agents, all wired for <strong>multi-agent, zero-sum play</strong>.<br>
+<!-- centred, autoplaying demo video --></p>
+<div style="text-align:center;">
+  <video src="/assets/video/MARL.mp4" width="640" height="360" autoplay="" muted="" loop="" playsinline="" style="display:block; margin:0 auto;">
+    <!-- Fallback text for very old browsers -->
+    Your browser doesn’t support HTML5 video.  
+    <a href="/assets/video/MARL.mp4">Download the clip</a>.
+  </video>
+</div>
+<p>Swap agents with a flag, flip between cooperative and adversarial reward structures, and benchmark straight away.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Agent</th>
+      <th>Multi-agent flavour</th>
+      <th>Why it’s interesting</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>DDPG</strong></td>
+      <td>Deep Deterministic Policy Gradient re-cast as a <em>differential game</em>
+</td>
+      <td>Treats every disturbance or competing vehicle as a second player; converges to Nash strategies while keeping the lean inference footprint of vanilla DDPG</td>
+    </tr>
+    <tr>
+      <td><strong>TD3</strong></td>
+      <td>Twin critics &amp; target-policy smoothing</td>
+      <td>Accurate value estimates stop either player from <em>over-optimistically</em> exploiting the other—great for tightly coupled pursuit-evasion</td>
+    </tr>
+    <tr>
+      <td><strong>SAC</strong></td>
+      <td>Entropy-regularised actor-critic</td>
+      <td>Adds a principled exploration drive; agents discover robust manoeuvres where pure reward-greedy play would stalemate</td>
+    </tr>
+    <tr>
+      <td><strong>PPO</strong></td>
+      <td>Clipped surrogate objective</td>
+      <td>On-policy updates thrive in fast-changing opponent strategies; simplest to tune when rewards are sparse or delayed</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2 id="why-multi-agent--zero-sum">Why multi-agent &amp; zero-sum?</h2>
+
+<p>Many real-world control problems are effectively games:</p>
+
+<ul>
+  <li>
+<strong>Pursuit-evasion</strong> – interceptor vs. target aircraft, autonomous car vs. pedestrian prediction</li>
+  <li>
+<strong>Disturbance rejection</strong> – controller vs. nature; treat wind-gusts or hardware faults as an adversary</li>
+  <li>
+<strong>Competitive resource allocation</strong> – multiple robots vying for the same power or bandwidth budget</li>
+</ul>
+
+<p>Model-free RL lifts the need for hand-crafted opponent models; differential-game extensions push agents toward robust <strong>Nash equilibria</strong>, not brittle one-shot optima.</p>
+
+<hr>
+
+<h2 id="reinforcement-learning--quick-primer">Reinforcement Learning — quick primer</h2>
+
+<p>Reinforcement learning (RL) is a paradigm in which an <em>agent</em> discovers an optimal control policy by <strong>interacting</strong> with an <em>environment</em> and maximising <strong>cumulative reward</strong>.</p>
+
+<h3 id="fundamentals">Fundamentals</h3>
+
+<p>At each discrete time $t$ the agent:</p>
+
+<ol>
+  <li>
+<strong>Observes</strong> a state $s_t$</li>
+  <li>
+<strong>Acts</strong> using policy $a_t\sim\pi_\theta(\,\cdot\,\mid s_t)$</li>
+  <li>
+<strong>Receives</strong> a reward $r_t$ and the next state $s_{t+1}$</li>
+</ol>
+
+<p>This loop repeats until a <em>terminal</em> condition resets the episode.<br>
+Conceptually, the environment, agent, and action align with the classic control terms <em>plant</em>, <em>controller</em>, and <em>control input</em>.</p>
+
+<!-- centred, smaller critic-network figure -->
+<div style="text-align:center;">
+  <img src="/assets/images/rl.png" alt="Critic network (value)." width="380" style="display:block;margin:0 auto;">
+  <p>The agent–environment process in a Markov decision process.</p>
+</div>
+
+<p>Mathematically, the problem is cast as a <strong>Markov Decision Process (MDP)</strong><br>
+$\langle S,A,P,r,q_0,\gamma\rangle$:</p>
+
+<ul>
+  <li>$S,\;A$ – state and action sets</li>
+  <li>$P(s’\mid s,a)$ – transition kernel</li>
+  <li>$r(s)\in\mathbb R$ – reward</li>
+  <li>$q_0$ – initial-state distribution</li>
+  <li>$\gamma\in[0,1]$ – discount factor</li>
+</ul>
+
+<p>The agent seeks to maximise the <strong>expected return</strong></p>
+
+\[G_t=\sum_{k=t+1}^{T}\gamma^{\,k-t-1}r_k.\]
+
+<p>Value functions formalise “how good” a state or action is:</p>
+
+\[\begin{aligned}
+V^\pi(s_t) &amp;=\mathbb E_\pi\Bigl[G_t\mid s_t\Bigr],\\[2pt]
+Q^\pi(s_t,a_t) &amp;=\mathbb E_\pi\Bigl[G_t\mid s_t,a_t\Bigr].
+\end{aligned}\]
+
+<hr>
+
+<!-- ## Typical workflow
+
+1. **Choose a game style** – pursuit-evasion, mix-cooperative, disturbance-injection  
+2. **Select an agent pair** – pit TD3 against SAC, or run self-play with DDPG  
+3. **Train → Evaluate → Compare** on reward, constraint violations, re-planning latency
+
+Actors are deterministic at test time—policies reduce to matrix multiplies; no iterative solvers or lookup tables. -->
+
+<!-- --- -->
+
+<h2 id="highlights">Highlights</h2>
+
+<!-- * **3-D pursuit-evasion:** TD3 captures the evader 12 % faster than SAC; SAC invents evasive spirals unseen in scripted tactics   -->
+<ul>
+  <li>
+<strong>Robust control:</strong> DDPG shrugs off ±25 % actuator bias that destabilises single-agent PPO</li>
+  <li>
+<strong>Generalisation:</strong> All agents keep &gt; 90 % reward when dynamics parameters shift by ±10 %</li>
+</ul>
+
+<p>Full figures, videos, and interactive notebooks live in the GitHub Pages docs.</p>
+
+<hr>
+
+<h2 id="algorithms">Algorithms</h2>
+
+<h4 id="ddpg-algorithm">DDPG Algorithm</h4>
+
+<p>The Deep Deterministic Policy Gradient Differential Game (DDPG) algorithm is implemented using two neural networks for each player: the actor network ( \pi_{\theta}(s) ) and the critic network ( Q_{\theta}(s, a) ). These networks are trained using the following algorithm:</p>
+
+<p>Algorithm 1: Deep Deterministic Policy Gradient</p>
+
+<ul>
+  <li>Input: initial policy parameters $\theta_1$, $\theta_2$, Q-function parameters $\phi_1$, $\phi_2$, empty replay buffer $\mathcal{D}$</li>
+  <li>Set target parameters equal to main parameters $\theta_{\text{targ},1} \leftarrow \theta_1$, $\theta_{\text{targ},2} \leftarrow \theta_2$, $\phi_{\text{targ},1} \leftarrow \phi_1$, $\phi_{\text{targ},2} \leftarrow \phi_2$</li>
+  <li>Repeat:
+    <ul>
+      <li>Observe state $s$</li>
+      <li>Select action for player 1: $a_1 = \text{clip}(\mu_{\theta_1}(s) + \epsilon_1, a_{Low}, a_{High})$, where $\epsilon_1 \sim \mathcal{N}$</li>
+      <li>Select action for player 2: $a_2 = \text{clip}(\mu_{\theta_2}(s) + \epsilon_2, a_{Low}, a_{High})$, where $\epsilon_2 \sim \mathcal{N}$</li>
+      <li>Execute actions $(a_1, a_2)$ in the environment.</li>
+      <li>Observe next state $s’$, reward pair $(r_1, r_2)$ for both players, and done signal $d$</li>
+      <li>Store transition $(s, a_1, a_2, r_1, r_2, s’, d)$ in replay buffer $\mathcal{D}$</li>
+      <li>If $s’$ is terminal:
+        <ul>
+          <li>Reset environment state.</li>
+        </ul>
+      </li>
+      <li>If it’s time to update:
+        <ul>
+          <li>For j in range (however many updates):
+            <ul>
+              <li>Randomly sample a batch of transitions, $B = { (s, a_1, a_2, r_1, r_2, s’, d) }$ from $\mathcal{D}$</li>
+              <li>Compute targets for both players:
+                <ul>
+                  <li>$y_1 = r_1 + \gamma (1 - d) Q_{\phi_{\text{targ},1}}(s’, \mu_{\theta_{\text{targ},1}}(s’), \mu_{\theta_{\text{targ},2}}(s’))$</li>
+                  <li>$y_2 = r_2 + \gamma (1 - d) Q_{\phi_{\text{targ},2}}(s’, \mu_{\theta_{\text{targ},1}}(s’), \mu_{\theta_{\text{targ},2}}(s’))$</li>
+                </ul>
+              </li>
+              <li>Update Q-functions for both players by one step of gradient descent:
+                <ul>
+                  <li>$\nabla_{\phi_1}\,
+\frac{1}{|B|}
+\sum_{(s,a_1,a_2,r_1,s^{\prime},d)\in B}
+\bigl(Q_{\phi_1}(s,a_1,a_2)\;-\;y_1\bigr)^{2}$</li>
+                  <li>$\nabla_{\phi_2}\,
+\frac{1}{|B|}
+\sum_{(s,a_1,a_2,r_2,s^{\prime},d)\in B}
+\bigl(Q_{\phi_2}(s,a_1,a_2)\;-\;y_2\bigr)^{2}$</li>
+                </ul>
+              </li>
+              <li>Update policies for both players by one step of gradient ascent:
+                <ul>
+                  <li>$\nabla_{\theta_1}\,
+\frac{1}{|B|}
+\sum_{s\in B}
+Q_{\phi_1}\bigl(s,\mu_{\theta_1}(s),\mu_{\theta_2}(s)\bigr)$</li>
+                  <li>$\nabla_{\theta_2}\,
+\frac{1}{|B|}
+\sum_{s\in B}
+Q_{\phi_2}\bigl(s,\mu_{\theta_1}(s),\mu_{\theta_2}(s)\bigr)$</li>
+                </ul>
+              </li>
+              <li>Update target networks for both players:
+                <ul>
+                  <li>$\phi_{\text{targ},1} \leftarrow \rho \phi_{\text{targ},1} + (1 - \rho) \phi_1$</li>
+                  <li>$\phi_{\text{targ},2} \leftarrow \rho \phi_{\text{targ},2} + (1 - \rho) \phi_2$</li>
+                  <li>$\theta_{\text{targ},1} \leftarrow \rho \theta_{\text{targ},1} + (1 - \rho) \theta_1$</li>
+                  <li>$\theta_{\text{targ},2} \leftarrow \rho \theta_{\text{targ},2} + (1 - \rho) \theta_2$</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Until convergence</li>
+</ul>
+
+<h4 id="td3-algorithm-twin-delayed-deep-deterministic-policy-gradient-multi-agent-zero-sum">TD3 Algorithm (Twin Delayed Deep Deterministic Policy Gradient, Multi-Agent Zero-Sum)</h4>
+
+<ul>
+  <li>
+<strong>Input:</strong> initial policy parameters $\theta_1,\theta_2$, twin-critic parameters<br>
+${\phi_{1,1},\phi_{1,2}}$ and ${\phi_{2,1},\phi_{2,2}}$, empty replay buffer $\mathcal D$</li>
+  <li>
+<strong>Set targets:</strong><br>
+$\theta_{\text{targ},i}\leftarrow\theta_i,\;\;
+ \phi_{\text{targ},i,j}\leftarrow\phi_{i,j}\quad (i\in{1,2},\,j\in{1,2})$</li>
+  <li>
+<strong>Repeat</strong>
+    <ul>
+      <li>Observe state $s$</li>
+      <li>
+<strong>Action selection</strong><br>
+$a_i=\operatorname{clip}\bigl(\mu_{\theta_i}(s)+\epsilon_i,\;a_{\min},a_{\max}\bigr),\;
+  \epsilon_i\sim\mathcal N\quad (i=1,2)$</li>
+      <li>Execute $(a_1,a_2)$; observe $s’$, reward pair $(r,-r)$, done $d$</li>
+      <li>Store $(s,a_1,a_2,r,s’,d)$ in $\mathcal D$</li>
+      <li>
+<strong>Every</strong> $M$ <strong>steps do:</strong> (for each update iteration $j$)
+        <ul>
+          <li>Sample mini-batch $B\subset\mathcal D$</li>
+          <li>
+<strong>Target actions (policy smoothing)</strong><br>
+$\tilde a_i = \operatorname{clip}\bigl(\mu_{\theta_{\text{targ},i}}(s’) +<br>
+\operatorname{clip}(\eta_i,-c,c),\,a_{\min},a_{\max}\bigr),\;\eta_i\sim\mathcal N$</li>
+          <li>
+<strong>Target Q-values</strong> (use <em>minimum</em> of twins)<br>
+$y = r + \gamma(1-d)\,\min_{j}\,Q_{\phi_{\text{targ},1,j}}\bigl(s’,\tilde a_1,\tilde a_2\bigr)$<br>
+(player 2 receives $-y$)</li>
+          <li>
+<strong>Critic updates</strong> $(j=1,2)$:<br>
+$\nabla_{\phi_{i,j}}\;\frac1{|B|}\sum_{B}\bigl(Q_{\phi_{i,j}}(s,a_1,a_2)-\sigma_i\,y\bigr)^2$<br>
+with $\sigma_1=+1,\;\sigma_2=-1$</li>
+          <li>
+<strong>Delayed actor update</strong> (every $d_{\text{policy}}$ iterations)<br>
+$\nabla_{\theta_i}\;\frac1{|B|}\sum_{s\in B}Q_{\phi_{i,1}}(s,\mu_{\theta_1}(s),\mu_{\theta_2}(s))$</li>
+          <li>
+<strong>Target-network Polyak averaging</strong><br>
+$\phi_{\text{targ},i,j}\leftarrow\tau\phi_{i,j}+(1-\tau)\phi_{\text{targ},i,j}$<br>
+$\theta_{\text{targ},i}\leftarrow\tau\theta_i+(1-\tau)\theta_{\text{targ},i}$</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Until convergence</strong></li>
+</ul>
+
+<h4 id="sac-algorithm-soft-actor-critic-multi-agent-zero-sum">SAC Algorithm (Soft Actor-Critic, Multi-Agent Zero-Sum)</h4>
+
+<ul>
+  <li>
+<strong>Input:</strong> policy parameters $\theta_1,\theta_2$, twin critics ${\phi_{1,1},\phi_{1,2}}$,<br>
+${\phi_{2,1},\phi_{2,2}}$, temperature parameters $\alpha_1,\alpha_2$, replay buffer $\mathcal D$</li>
+  <li>Initialise target critics $\phi_{\text{targ},i,j}\leftarrow\phi_{i,j}$</li>
+  <li>
+<strong>Repeat</strong>
+    <ul>
+      <li>Observe state $s$</li>
+      <li>
+<strong>Sample actions</strong> (re-parameterisation):<br>
+$a_i=\tanh\bigl(\mu_{\theta_i}(s)+\sigma_{\theta_i}(s)\,\epsilon_i\bigr),\;\epsilon_i\sim\mathcal N$</li>
+      <li>Execute $(a_1,a_2)$; observe $s’$, reward $(r,-r)$, done $d$</li>
+      <li>Store transition in $\mathcal D$</li>
+      <li>
+<strong>For</strong> $j=1\ldots N_{\text{updates}}$:
+        <ul>
+          <li>Sample mini-batch $B$</li>
+          <li>
+<strong>Target value with entropy bonus</strong><br>
+$\tilde a_i’\sim\pi_{\theta_i}(s’),\quad<br>
+ \hat Q_{i}(s’,\tilde a_1’,\tilde a_2’)=\min_{k}Q_{\phi_{\text{targ},i,k}}(s’,\tilde a_1’,\tilde a_2’)$</li>
+          <li>$y = r + \gamma(1-d)\bigl(\hat Q_{1}(s’,\cdot) - \alpha_1\log\pi_{\theta_1}(\tilde a_1’|s’)\bigr)$<br>
+(player 2 uses $-y$ with $\alpha_2$)</li>
+          <li>
+<strong>Critic losses</strong><br>
+$\mathcal L_{\phi_{i,k}}=\frac1{|B|}\sum_{B}\bigl(Q_{\phi_{i,k}}(s,a_1,a_2)-\sigma_i\,y\bigr)^2$</li>
+          <li>
+<strong>Policy losses</strong><br>
+$\mathcal L_{\theta_i}=\frac1{|B|}\sum_{s\in B}<br>
+  \bigl(\alpha_i\log\pi_{\theta_i}(a_i|s)-Q_{\phi_{i,1}}(s,a_1,a_2)\bigr)$</li>
+          <li>
+<strong>Temperature update</strong> (optional, per player)<br>
+$\nabla_{\alpha_i}\;\alpha_i\bigl(-\log\pi_{\theta_i}(a_i|s)-\mathcal H_\text{target}\bigr)$</li>
+          <li>
+<strong>Target critics</strong><br>
+$\phi_{\text{targ},i,k}\leftarrow\tau\phi_{i,k}+(1-\tau)\phi_{\text{targ},i,k}$</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Until convergence</strong></li>
+</ul>
+
+<h4 id="ppo-algorithm-proximal-policy-optimisation-multi-agent-zero-sum">PPO Algorithm (Proximal Policy Optimisation, Multi-Agent Zero-Sum)</h4>
+
+<ul>
+  <li>
+<strong>Input:</strong> policy parameters $\theta_1,\theta_2$, critic parameters $\psi_1,\psi_2$</li>
+  <li>
+<strong>Repeat</strong>
+    <ul>
+      <li>
+<strong>Collect trajectories</strong> for $T$ steps using current policies $\pi_{\theta_1},\pi_{\theta_2}$</li>
+      <li>For each step $t$ compute
+        <ul>
+          <li>
+<strong>Returns:</strong> $G_t^1 = \sum_{k\ge t}\gamma^{k-t}r_k$, $G_t^2=-G_t^1$</li>
+          <li>
+<strong>Advantages:</strong><br>
+$A_t^i = G_t^i - V_{\psi_i}(s_t)$</li>
+        </ul>
+      </li>
+      <li>
+<strong>For</strong> $K$ <strong>epochs</strong>, minibatch over collected data:
+        <ul>
+          <li>
+<strong>Ratio:</strong><br>
+$r_t^i(\theta) = \dfrac{\pi_{\theta_i}(a_t|s_t)}{\pi_{\theta_{i,\text{old}}}(a_t|s_t)}$</li>
+          <li>
+<strong>Clipped objective:</strong><br>
+$\mathcal L_{\theta_i}=<br>
+  \frac1{|B|}\sum_{t\in B}\min\bigl(r_t^iA_t^i,\;\operatorname{clip}(r_t^i,1-\epsilon,1+\epsilon)A_t^i\bigr)$</li>
+          <li>
+<strong>Critic loss:</strong><br>
+$\mathcal L_{\psi_i}= \frac1{|B|}\sum_{t\in B}\bigl(V_{\psi_i}(s_t)-G_t^i\bigr)^2$</li>
+          <li>
+<strong>Update</strong> $\theta_i$ and $\psi_i$ via gradient ascent / descent</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="notation-key">Notation key</h3>
+<ul>
+  <li>$\theta_i$ — actor parameters for player $i$</li>
+  <li>$\phi_{i,j}$ — $j$-th Q-critic for player $i$ (TD3/SAC)</li>
+  <li>$\psi_i$ — state-value net for player $i$ (PPO)</li>
+  <li>$\gamma$ — discount factor   $\tau$ — Polyak coefficient   $\epsilon$ — PPO clip range</li>
+</ul>
+
+<hr>
+<h3 id="actorcritic-frameworks--neural-networks">Actor–critic frameworks &amp; neural networks</h3>
+
+<p>Most modern continuous-control algorithms are <strong>actor–critic</strong>:</p>
+
+<ul>
+  <li>
+<strong>Actor</strong> $\pi_{\theta}(a\mid s)$ – the policy</li>
+  <li>
+<strong>Critic</strong> $Q_{\phi}$ or $V_{\psi}$ – estimates return</li>
+</ul>
+
+<p>Both are neural networks (fully-connected, ReLU) trained with gradient-based updates.</p>
+
+<!-- centred, smaller critic-network figure -->
+<div style="text-align:center;">
+  <img src="/assets/images/actor.png" alt="Actor network (policy)." width="380" style="display:block;margin:0 auto;">
+  <p>Critic network (value).</p>
+</div>
+
+<!-- centred, smaller critic-network figure -->
+<div style="text-align:center;">
+  <img src="/assets/images/critic.png" alt="Critic network (value)." width="380" style="display:block;margin:0 auto;">
+  <p>Critic network (value).</p>
+</div>
+
+
+
+<!-- Comments only for posts -->
+
+
+            </article>
+        </main>
+
+        <footer>
+          <p class="copy">
+            <small> © Ali BaniAsad 2025
+                    | Powered by Jekyll and
+                    <a target="_blank" href="https://github.com/jitinnair1/gradfolio/" rel="noopener noreferrer">Gradfolio</a>.
+                    Last updated on 26 May 2025
+            </small>
+          </p>
+
+        <div class="rounded-social-buttons">
+<a title="" class="social-button" itemprop="email" href="mailto:alibaniasad1999@yahoo.com" target="_blank">
+<i class="far fa-envelope"></i>
+</a><a title="" class="social-button" href="https://www.linkedin.com/in/alibaniasad1999/" itemprop="sameAs" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-linkedin-in"></i>
+</a><a title="" class="social-button google-scholar" itemprop="sameAs" href="https://scholar.google.com/citations?user=KeKpSvEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i>
+  </a><a class="social-button" href="https://github.com/alibaniasad1999" title="" target="_blank" rel="noopener noopener noreferrer">
+  <i class="fab fa-github"></i>
+</a><a title="" class="social-button" href="https://orcid.org/0009-0005-8094-1728" itemprop="sameAs" target="_blank" rel="noopener noreferrer">
+<i class="fab fa-orcid"></i>
+</a>
+</div>
+
+
+        </footer>
+
+        <!-- Google Analytics Tracking code -->
+<script src="https://cdn.jsdelivr.net/npm/ga-lite@1/dist/ga-lite.min.js" async></script>
+<script>
+var galite = galite || {};
+galite.UA = '';
+</script>
+
+    </body>
+
+</html>
