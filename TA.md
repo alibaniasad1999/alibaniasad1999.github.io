@@ -88,7 +88,7 @@ Additionally, I currently serve as a Section Leader for Stanford University’s 
 
 
 <div style="text-align:center;">
-  <img src="/assets/cnav/stanford.png"
+  <img src="/assets/cnav/badge.svg"
        alt="class."
        width="380"           
        style="display:block;margin:0 auto;">
