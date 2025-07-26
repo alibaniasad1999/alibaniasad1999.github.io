@@ -29,7 +29,6 @@
   -webkit-transform: rotate(360deg);
       -ms-transform: rotate(360deg);
           transform: rotate(360deg);
-  color: #fefefe;
 }
 
 .rounded-social-buttons,
@@ -52,6 +51,7 @@
 }
 
 .rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+  color: #fefefe;
   background: #3b5998;
   border-color: #3b5998;
 }
@@ -62,6 +62,7 @@
 }
 
 .rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+  color: #fefefe;
   background: #007bb5;
   border-color: #007bb5;
 }
@@ -72,6 +73,7 @@
 }
 
 .rounded-social-buttons .social-button.github:hover, .rounded-social-buttons .social-button.github:focus {
+  color: #fefefe;
   background: #000000;
   border-color: #000000;
 }
@@ -82,6 +84,7 @@
 }
 
 .rounded-social-buttons .social-button.email:hover, .rounded-social-buttons .social-button.email:focus {
+  color: #fefefe;
   background: #60c17d;
   border-color: #60c17d;
 }
@@ -92,6 +95,7 @@
 }
 
 .rounded-social-buttons .social-button.orcid:hover, .rounded-social-buttons .social-button.orcid:focus {
+  color: #fefefe;
   background: #a6ce3b;
   border-color: #a6ce3b;
 }
@@ -102,6 +106,7 @@
 }
 
 .rounded-social-buttons .social-button.researchgate:hover, .rounded-social-buttons .social-button.researchgate:focus {
+  color: #fefefe;
   background: #5dd1b0;
   border-color: #5dd1b0;
 }
@@ -112,6 +117,7 @@
 }
 
 .rounded-social-buttons .social-button.bluesky:hover, .rounded-social-buttons .social-button.bluesky:focus {
+  color: #fefefe;
   background: #74C0FC;
   border-color: #74C0FC;
 }
@@ -122,6 +128,7 @@
 }
 
 .rounded-social-buttons .social-button.quora:hover, .rounded-social-buttons .social-button.quora:focus {
+  color: #fefefe;
   background: #a82400;
   border-color: #a82400;
 }
@@ -132,6 +139,7 @@
 }
 
 .rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+  color: #fefefe;
   background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
   background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
@@ -146,6 +154,65 @@
 }
 
 .rounded-social-buttons .social-button.stackoverflow:hover, .rounded-social-buttons .social-button.stackoverflow:focus {
+  color: #fefefe;
   background: #f48024;
   border-color: #f48024;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .rounded-social-buttons .social-button {
+    background: transparent;
+    color: #fefefe;
+  }
+
+  .rounded-social-buttons .social-button.facebook {
+    color: #3b5998;
+    border-color: #3b5998;
+  }
+
+  .rounded-social-buttons .social-button.linkedin {
+    color: #007bb5;
+    border-color: #007bb5;
+  }
+
+  .rounded-social-buttons .social-button.github {
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+
+  .rounded-social-buttons .social-button.email {
+    color: #60c17d;
+    border-color: #60c17d;
+  }
+
+  .rounded-social-buttons .social-button.orcid {
+    color: #a6ce3b;
+    border-color: #a6ce3b;
+  }
+
+  .rounded-social-buttons .social-button.researchgate {
+    color: #5dd1b0;
+    border-color: #5dd1b0;
+  }
+
+  .rounded-social-buttons .social-button.bluesky {
+    color: #74C0FC;
+    border-color: #74C0FC;
+  }
+
+  .rounded-social-buttons .social-button.quora {
+    color: #a82400;
+    border-color: #a82400;
+  }
+
+  .rounded-social-buttons .social-button.instagram {
+    color: #dc2743;
+    border-color: #cc2366;
+  }
+
+  .rounded-social-buttons .social-button.stackoverflow {
+    color: #f48024;
+    border-color: #f48024;
+  }
 }
