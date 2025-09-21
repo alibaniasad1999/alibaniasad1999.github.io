@@ -15,7 +15,7 @@ The social-icons footer can be used to link profiles from GitHub, OrcID and Reas
 
 PS: If you liked the theme, do star it on GitHub! -->
 
-I am Ali BaniAsad, an M.S. student in Aerospace Engineering at Sharif University of Technology. My research interests lie in reinforcement learning, robotics, multi-agent systems, and automatic control. I am passionate about advancing technology in the fields of AI and robotics, with a focus on embedded machine learning and game theory. Explore my work, research, and projects, and feel free to get in touch!
+I am Ali BaniAsad, an M.S. graduate in Aerospace Engineering from Sharif University of Technology. My research interests lie in reinforcement learning, robotics, multi-agent systems, and automatic control. I am passionate about advancing technology in the fields of AI and robotics, with a focus on embedded machine learning and game theory. Explore my work, research, and projects, and feel free to get in touch!
 
 <!-- ### Also, check out:
 
