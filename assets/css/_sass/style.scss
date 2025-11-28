@@ -194,6 +194,40 @@ blockquote {
   }
 }
 
+/* Theme overrides when toggled by JS */
+html.theme-dark, body.theme-dark {
+  background-color: $body-bg-dark !important;
+  color: $text-color-dark !important;
+}
+
+html.theme-dark a, body.theme-dark a {
+  color: $brand-color;
+}
+
+/* Make the simplebutton look good in dark mode */
+.simplebutton {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+html.theme-dark .simplebutton {
+  background: #2b3137;
+  color: $text-color-dark;
+  border-color: rgba(255,255,255,0.06);
+}
+
+/* Theme toggle placement tweaks inside the horizontal navigation */
+.links .simplebutton {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.6em;
+  padding: 8px 12px;
+  font-size: 0.9em;
+}
+
+#theme-icon {
+  font-size: 0.9em;
+}
+
 /* Article list in blog and archive page */
 .article-list {
   margin: 1em 0;
