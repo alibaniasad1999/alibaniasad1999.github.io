@@ -1,9 +1,8 @@
 (function(){
   var storageKey = 'theme-preference';
-  var toggle = document.getElementById('theme-toggle');
-  var icon = document.getElementById('theme-icon');
 
   function setIcon(theme){
+    var icon = document.getElementById('theme-icon');
     if(!icon) return;
     if(theme === 'dark'){
       icon.className = 'fa-solid fa-sun';
@@ -28,8 +27,8 @@
     return 'light';
   }
 
-  // Initialize on DOMContentLoaded if DOM not ready yet
   function init(){
+    var toggle = document.getElementById('theme-toggle');
     var theme = getPreferredTheme();
     applyTheme(theme);
 
@@ -39,9 +38,11 @@
         var next = cur === 'dark' ? 'light' : 'dark';
         applyTheme(next);
       });
+    } else {
+      console.warn('Theme toggle button not found');
     }
 
-    // Listen to system changes when no explicit preference stored
+    // Listen to system changes
     try{
       if(!localStorage.getItem(storageKey) && window.matchMedia){
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){

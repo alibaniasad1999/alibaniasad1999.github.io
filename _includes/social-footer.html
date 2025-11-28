@@ -2,7 +2,7 @@
 
 {%- if site.email -%}
 <a title="{{ _locale_string_email }}"
-class="social-button" itemprop="email"
+class="social-button email" itemprop="email"
 href="mailto:{{ site.email}}" target="_blank">
 <i class="far fa-envelope"></i>
 </a>
@@ -13,7 +13,7 @@ href="mailto:{{ site.email}}" target="_blank">
 
 {%- if site.linkedin -%}
 <a title="{{ _locale_string_follow | replace: '[NAME]', 'LinkedIn' }}"
-class="social-button"
+class="social-button linkedin"
 href="https://www.linkedin.com/in/{{ site.linkedin }}" itemprop="sameAs"
 target="_blank">
 <i class="fa-brands fa-linkedin-in"></i>
@@ -41,7 +41,7 @@ target="_blank">
 
 {%- if site.github -%}
 <a
-  class="social-button"
+  class="social-button github"
   href="https://github.com/{{ site.github }}"
   title="{{ _locale_string_follow | replace: '[NAME]', 'GitHub' }}"
   target="_blank" rel="noopener"
@@ -61,7 +61,7 @@ target="_blank">
 
 {%- if site.orcid -%}
 <a title="{{ _locale_string_follow | replace: '[NAME]', 'Orcid' }}"
-class="social-button"
+class="social-button orcid"
 href="https://orcid.org/{{ site.orcid }}" itemprop="sameAs"
 target="_blank">
 <i class="fab fa-orcid"></i>

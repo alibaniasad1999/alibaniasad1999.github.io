@@ -13,6 +13,7 @@ body {
   padding: 2em 1em;
   text-rendering: optimizeLegibility;
   height: 100%;
+  position: relative;
 
   @media (prefers-color-scheme: dark) {
     background-color: $body-bg-dark;
@@ -195,13 +196,28 @@ blockquote {
 }
 
 /* Theme overrides when toggled by JS */
-html.theme-dark, body.theme-dark {
+/* Force Dark Mode */
+html.theme-dark body {
   background-color: $body-bg-dark !important;
   color: $text-color-dark !important;
 }
-
-html.theme-dark a, body.theme-dark a {
+html.theme-dark a {
   color: $brand-color;
+}
+html.theme-dark p a {
+  color: $text-color-dark;
+}
+
+/* Force Light Mode (overrides system dark mode) */
+html.theme-light body {
+  background-color: $body-bg !important;
+  color: $text-color !important;
+}
+html.theme-light a {
+  color: $brand-color;
+}
+html.theme-light p a {
+  color: $text-color;
 }
 
 /* Make the simplebutton look good in dark mode */
@@ -215,17 +231,45 @@ html.theme-dark .simplebutton {
   border-color: rgba(255,255,255,0.06);
 }
 
-/* Theme toggle placement tweaks inside the horizontal navigation */
-.links .simplebutton {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 0.6em;
-  padding: 8px 12px;
-  font-size: 0.9em;
+/* Theme toggle button positioning and style */
+.theme-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 1rem;
+  color: $text-color;
+  z-index: 100;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $brand-color;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: $text-color-dark;
+  }
+}
+
+html.theme-dark .theme-toggle {
+  color: $text-color-dark;
+  &:hover {
+    color: $brand-color;
+  }
+}
+
+html.theme-light .theme-toggle {
+  color: $text-color;
+  &:hover {
+    color: $brand-color;
+  }
 }
 
 #theme-icon {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 /* Article list in blog and archive page */
