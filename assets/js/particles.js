@@ -78,13 +78,17 @@
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     var dark = isDark();
-    var pAlpha = dark ? 0.6 : 0.4;
+    // Dark mode: bright brand green; Light mode: darker green for contrast on white
+    var pr = dark ? 96 : 45;
+    var pg = dark ? 193 : 120;
+    var pb = dark ? 125 : 68;
+    var pAlpha = dark ? 0.6 : 0.7;
 
     for (var i = 0; i < particles.length; i++) {
       particles[i].update();
       ctx.beginPath();
       ctx.arc(particles[i].x, particles[i].y, particles[i].radius, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(96,193,125,' + pAlpha + ')';
+      ctx.fillStyle = 'rgba(' + pr + ',' + pg + ',' + pb + ',' + pAlpha + ')';
       ctx.fill();
     }
 
@@ -94,12 +98,12 @@
         var dy = particles[i].y - particles[j].y;
         var dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < connectDistance) {
-          var alpha = (1 - dist / connectDistance) * (dark ? 0.25 : 0.12);
+          var alpha = (1 - dist / connectDistance) * (dark ? 0.25 : 0.28);
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = 'rgba(96,193,125,' + alpha + ')';
-          ctx.lineWidth = 0.8;
+          ctx.strokeStyle = 'rgba(' + pr + ',' + pg + ',' + pb + ',' + alpha + ')';
+          ctx.lineWidth = dark ? 0.8 : 1;
           ctx.stroke();
         }
       }
@@ -111,12 +115,12 @@
         var dy2 = mouse.y - particles[k].y;
         var dist2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
         if (dist2 < mouseRadius) {
-          var alpha2 = (1 - dist2 / mouseRadius) * (dark ? 0.45 : 0.22);
+          var alpha2 = (1 - dist2 / mouseRadius) * (dark ? 0.45 : 0.4);
           ctx.beginPath();
           ctx.moveTo(mouse.x, mouse.y);
           ctx.lineTo(particles[k].x, particles[k].y);
-          ctx.strokeStyle = 'rgba(96,193,125,' + alpha2 + ')';
-          ctx.lineWidth = 1;
+          ctx.strokeStyle = 'rgba(' + pr + ',' + pg + ',' + pb + ',' + alpha2 + ')';
+          ctx.lineWidth = dark ? 1 : 1.2;
           ctx.stroke();
         }
       }
