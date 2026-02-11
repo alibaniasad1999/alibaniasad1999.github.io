@@ -6,9 +6,11 @@ published: true
 ---
 
 
-I am a recent M.Sc. graduate from Sharif University of Technology, specializing in robotics, reinforcement learning, and embedded machine learning. My research focuses on optimizing robotic control systems and enhancing real-time decision-making, particularly in resource-constrained environments.
+I am an M.Sc. graduate from **Sharif University of Technology** specializing in robotics, reinforcement learning, and embedded machine learning. I am currently working as a **Robotics Engineer at Fasta Robotics** and **actively seeking PhD positions** in robust RL, adversarial training, and real-time embedded AI for robotic systems.
 
-I completed my B.Sc. with the Best Undergraduate Thesis Award from the Iranian Aerospace Society for my work on controlling a 3-DOF quadcopter platform using Differential Game Theory and Nash Equilibrium. This recognition reflects my commitment to excellence and passion for developing innovative solutions in robotics and control systems.
+My research centers on **robust control via zero-sum Markov games**, where a learned adversary probes the weaknesses of a control policy during training, yielding formal worst-case performance guarantees. I work on **dual-policy architectures** that blend optimal and robust policies using **transformer-based disturbance detection**, and on deploying these systems in real time on **NVIDIA Jetson** platforms through **TensorRT** and **ROS 2**.
+
+I completed my B.Sc. with the **Best Undergraduate Thesis Award** from the Iranian Aerospace Society for my work on controlling a 3-DOF quadcopter platform using Differential Game Theory and Nash Equilibrium.
 
 
 <div style="text-align:center;">
@@ -21,9 +23,16 @@ I completed my B.Sc. with the Best Undergraduate Thesis Award from the Iranian A
 
 
 
-My master’s thesis focused on designing and implementing deep reinforcement learning algorithms for robotics on embedded hardware, bridging AI and robotics to solve complex, real-world challenges. In addition to my research, I contributed to projects involving multi-agent systems and advanced game theory-based optimization, achieving significant results in both simulations and hardware applications.
+My master's thesis focused on **zero-sum multi-agent reinforcement learning** for robust spacecraft guidance, implementing DDPG, TD3, SAC, and PPO in adversarial game formulations with C++ real-time inference and ROS 2 hardware integration. I also contributed to projects involving neural-network-aided navigation (LSTM-based INS/GPS fusion) and differential game controllers deployed on embedded hardware.
 
-I am always open to new opportunities to collaborate, learn, and push the boundaries of robotics technology.
+### Technical Skills
+
+- **RL & ML:** PyTorch, JAX, deep RL (DDPG, TD3, SAC, PPO), multi-agent RL, adversarial training, transformer architectures
+- **Robotics:** ROS 2, MuJoCo, Gymnasium, embedded control (STM32, Arduino), MATLAB/Simulink
+- **Deployment:** ONNX, TensorRT, NVIDIA Jetson, CUDA, FP16/INT8 quantization
+- **Languages:** Python, C/C++, MATLAB
+
+I am actively looking for PhD opportunities to advance research in robust reinforcement learning and real-time robotic control.
 
 <p>
   <a
