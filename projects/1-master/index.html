@@ -1,0 +1,1100 @@
+<link rel="icon" type="image/png" href="/bai.png">
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link rel="stylesheet" href="/assets/css/main.css">
+
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle dark / light">
+            <i id="theme-icon" class="fa-solid fa-moon"></i>
+        </button>
+
+        <h1 class="post-headline">Ali BaniAsad</h1>
+        <h3 class="post-description">Robotics Engineer at Fasta | Robust RL & Embedded AI Researcher | Seeking PhD Positions</h3>
+
+        <div class="links scroll">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <!-- <a href="/research/">Research</a> -->
+        <a href="/projects/">Projects</a>
+        <a href="/teaching/">Teaching</a>
+        <a href="/publications/">Publications</a>
+        <a href="/cv/">CV</a>
+        <!-- <a href="/blog/">Blog</a>
+        <a href="/archive/">Archive</a> -->
+</div>
+
+        <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Robust RL Differential Game Guidance | Ali BaniAsad</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Robust RL Differential Game Guidance" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Zero-sum multi-agent reinforcement learning for robust spacecraft guidance." />
+<meta property="og:description" content="Zero-sum multi-agent reinforcement learning for robust spacecraft guidance." />
+<link rel="canonical" href="https://alibaniasad1999.github.io/projects/1-master/" />
+<meta property="og:url" content="https://alibaniasad1999.github.io/projects/1-master/" />
+<meta property="og:site_name" content="Ali BaniAsad" />
+<meta property="og:image" content="https://alibaniasad1999.github.io/assets/images/multi-agent-light.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-11T13:46:25+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://alibaniasad1999.github.io/assets/images/multi-agent-light.jpeg" />
+<meta property="twitter:title" content="Robust RL Differential Game Guidance" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-11T13:46:25+00:00","datePublished":"2026-02-11T13:46:25+00:00","description":"Zero-sum multi-agent reinforcement learning for robust spacecraft guidance.","headline":"Robust RL Differential Game Guidance","image":"https://alibaniasad1999.github.io/assets/images/multi-agent-light.jpeg","mainEntityOfPage":{"@type":"WebPage","@id":"https://alibaniasad1999.github.io/projects/1-master/"},"url":"https://alibaniasad1999.github.io/projects/1-master/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+        <!-- insert favicons, used https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+
+        <!-- MathJax -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+     processEscapes: true
+    }
+  });
+</script>
+
+
+        <!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
+        <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v6.7.2/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+
+    </head>
+
+    <body>
+        <canvas id="particle-canvas"></canvas>
+        <main>
+            <article>
+                <h1 class="post-headline">Robust RL Differential Game Guidance</h1>
+<p class="meta"><small>February 11, 2026</small></p>
+
+<!-- _includes/head-custom.html  (or drop straight into your default layout) -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-TJk9a38m…(truncated)…" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<h1 id="-robust-reinforcement-learning-differential-game-guidance">
+<i class="fa-solid fa-rocket"></i> Robust Reinforcement Learning Differential Game Guidance</h1>
+<h4 id="masters-thesis--low-thrust-multi-body-dynamical-environments">Master’s Thesis — Low-Thrust Multi-Body Dynamical Environments</h4>
+
+<blockquote>
+  <p><strong>Ali Bani Asad</strong><br>
+Department of Aerospace Engineering, Sharif University of Technology<br>
+<em>Supervised by: Dr. Hadi Nobahari</em> · September 2025</p>
+</blockquote>
+
+<p align="center">
+  <a href="https://github.com/alibaniasad1999/master-thesis" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github&amp;style=for-the-badge" alt="GitHub">
+  </a>
+  <img src="https://img.shields.io/badge/python-3.8+-blue.svg?style=for-the-badge&amp;logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/PyTorch-2.2.2-ee4c2c.svg?style=for-the-badge&amp;logo=pytorch" alt="PyTorch">
+  <img src="https://img.shields.io/badge/ROS2-Humble-blue.svg?style=for-the-badge&amp;logo=ros" alt="ROS2">
+  <img src="https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge" alt="License">
+</p>
+
+<hr>
+
+<h2 id="-abstract">📋 Abstract</h2>
+
+<p>This research presents a <strong>zero-sum multi-agent reinforcement learning (MARL)</strong> framework for robust spacecraft guidance in the challenging <strong>Earth-Moon three-body dynamical system</strong>. The work addresses critical problems in low-thrust spacecraft guidance under significant environmental uncertainties through a novel differential game formulation.</p>
+
+<!-- Demo video -->
+<div style="text-align:center; margin: 40px 0;">
+  <video src="/assets/video/MARL.mp4" width="720" height="405" autoplay="" muted="" loop="" playsinline="" style="display:block; margin:0 auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    Your browser doesn't support HTML5 video.  
+    <a href="/assets/video/MARL.mp4">Download the video</a>.
+  </video>
+  <p style="margin-top: 15px; color: #666; font-style: italic;">Multi-Agent RL: Robust spacecraft guidance in three-body problem</p>
+</div>
+
+<h3 id="-key-contributions">🎯 Key Contributions</h3>
+
+<ul>
+  <li>
+<strong>🎮 Zero-Sum Game Formulation</strong> — Spacecraft guidance cast as a two-player differential game between guidance and disturbance agents.</li>
+  <li>
+<strong>🤖 Multi-Agent RL Algorithms</strong> — DDPG, TD3, SAC, and PPO extended to zero-sum MARL variants (MA-DDPG, MA-TD3, MA-SAC, MA-PPO).</li>
+  <li>
+<strong>🛡️ Robustness Analysis</strong> — Extensive stress-testing across initial conditions, actuator disturbances, sensor noise, delays, model mismatch, and combined uncertainties.</li>
+  <li>
+<strong>🚀 Hardware Integration</strong> — ROS2 pipeline with C++ inference for real-time deployment.</li>
+  <li>
+<strong>📊 Benchmark Comparison</strong> — Classical control and single-agent RL baselines for rigorous evaluation.</li>
+</ul>
+
+<h3 id="-key-results">🏆 Key Results</h3>
+
+<blockquote>
+  <p>The zero-sum MARL approach demonstrates <strong>superior robustness</strong>, highlighted by <strong>MA-TD3</strong> performance:</p>
+</blockquote>
+
+<ul>
+  <li>✅ 30 % trajectory error reduction versus single-agent TD3</li>
+  <li>✅ 95.3 % success rate under combined uncertainties (vs. 88.2 %)</li>
+  <li>✅ 23.4 m/s fuel consumption — lowest among all methods</li>
+  <li>✅ &lt;5 ms C++ inference time enabling real-time execution</li>
+  <li>✅ Stable behavior even in heavily perturbed environments</li>
+</ul>
+
+<hr>
+
+<h2 id="️-repository-structure">🏗️ Repository Structure</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>master-thesis/
+├── 📚 Report/                      # LaTeX thesis document
+│   ├── thesis.tex                  # Main thesis file
+│   ├── Chapters/                   # 8 chapters (Introduction → Conclusion)
+│   ├── bibs/                       # Bibliography
+│   └── plots/                      # Result plots and figures
+│
+├── 📜 Paper/                       # Conference paper (IEEE format)
+│
+├── 💻 Code/
+│   ├── Python/
+│   │   ├── Algorithms/             # DDPG, TD3, SAC, PPO implementations
+│   │   ├── Environment/            # Three-body problem dynamics (TBP.py)
+│   │   ├── TBP/                    # Single-agent training
+│   │   ├── Robust_eval/            # Robustness testing (Standard &amp; ZeroSum)
+│   │   ├── Benchmark/              # OpenAI Gym environments
+│   │   └── utils/                  # Utility functions
+│   │
+│   ├── C/                          # C++ real-time inference (PyTorch models)
+│   ├── ROS2/                       # ROS2 packages for hardware integration
+│   ├── Simulink/                   # MATLAB Simulink models
+│   └── ros_legacy/                 # Legacy ROS1 implementation
+│
+├── 🖼️ Figure/                      # Visualizations (TBP, HIL)
+├── 🎓 Presentation/                # Defense slides (Beamer)
+└── 📖 Proposal/                    # Research proposal
+</code></pre></div></div>
+
+<p><strong>Full Repository:</strong> <a href="https://github.com/alibaniasad1999/master-thesis" target="_blank" rel="noopener noreferrer">https://github.com/alibaniasad1999/master-thesis</a></p>
+
+<hr>
+
+<h2 id="-research-methodology">🔬 Research Methodology</h2>
+
+<h3 id="problem-formulation">Problem Formulation</h3>
+
+<p>The spacecraft guidance problem in the <strong>Circular Restricted Three-Body Problem (CR3BP)</strong> is formulated as a <strong>zero-sum differential game</strong>:</p>
+
+<div style="display: flex; justify-content: space-around; margin: 20px 0;">
+  <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; width: 45%;">
+    <h4>🎯 Player 1: Guidance Agent</h4>
+    <p>Minimizes trajectory deviation and fuel consumption</p>
+  </div>
+  <div style="background: #ffebee; padding: 15px; border-radius: 8px; width: 45%;">
+    <h4>⚔️ Player 2: Disturbance Agent</h4>
+    <p>Maximizes trajectory deviation (models worst-case uncertainties)</p>
+  </div>
+</div>
+
+<p>This formulation enables the development of <strong>inherently robust control policies</strong> that perform well under adversarial conditions.</p>
+
+<hr>
+
+<h2 id="-multi-agent-rl-algorithms">🤖 Multi-Agent RL Algorithms</h2>
+
+<div style="overflow-x: auto; margin: 20px 0;">
+  <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <thead>
+      <tr style="background: #2196F3; color: white;">
+        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #1976D2;">Algorithm</th>
+        <th style="padding: 12px; text-align: center; border-bottom: 2px solid #1976D2;">Type</th>
+        <th style="padding: 12px; text-align: center; border-bottom: 2px solid #1976D2;">Key Features</th>
+        <th style="padding: 12px; text-align: center; border-bottom: 2px solid #1976D2;">Best For</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>MA-DDPG</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Off-policy, Deterministic</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Simple, efficient, strong baseline</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Fast prototyping</td>
+      </tr>
+      <tr style="background: #f9f9f9;">
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>MA-TD3</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Off-policy, Deterministic</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Target smoothing, delayed updates, clipped double Q</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;"><strong>Best overall performance</strong></td>
+      </tr>
+      <tr>
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>MA-SAC</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Off-policy, Stochastic</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Maximum entropy, automatic temperature tuning</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Exploration-heavy tasks</td>
+      </tr>
+      <tr style="background: #f9f9f9;">
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>MA-PPO</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">On-policy, Stochastic</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Trust-region optimization, stable updates</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Sparse rewards</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 id="training-strategy">Training Strategy</h3>
+
+<ul>
+  <li>
+<strong>Centralized Training, Decentralized Execution (CTDE)</strong>: Both agents observe full state during training but act independently during deployment</li>
+  <li>
+<strong>Alternating Optimization</strong>: Sequential training of guidance and disturbance agents</li>
+  <li>
+<strong>Full Information Setting</strong>: Complete state observation for optimal policy learning</li>
+</ul>
+
+<hr>
+
+<h2 id="-key-results-1">📊 Key Results</h2>
+
+<h3 id="performance-comparison">Performance Comparison</h3>
+
+<div style="overflow-x: auto; margin: 20px 0;">
+  <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <thead>
+      <tr style="background: #2196F3; color: white;">
+        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #1976D2;">Algorithm</th>
+        <th style="padding: 12px; text-align: center; border-bottom: 2px solid #1976D2;">Trajectory Error (m)</th>
+        <th style="padding: 12px; text-align: center; border-bottom: 2px solid #1976D2;">Fuel Consumption (m/s)</th>
+        <th style="padding: 12px; text-align: center; border-bottom: 2px solid #1976D2;">Success Rate (%)</th>
+        <th style="padding: 12px; text-align: center; border-bottom: 2px solid #1976D2;">Robustness</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>PID Control</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">8,432 ± 2,156</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">45.2 ± 8.3</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">72.4</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">⭐⭐</td>
+      </tr>
+      <tr style="background: #f9f9f9;">
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>DDPG</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">1,234 ± 892</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">28.7 ± 5.2</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">84.6</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">⭐⭐⭐</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>TD3</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">967 ± 654</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">26.4 ± 4.1</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">88.2</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">⭐⭐⭐⭐</td>
+      </tr>
+      <tr style="background: #f9f9f9;">
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>SAC</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">1,045 ± 721</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">27.8 ± 4.8</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">86.9</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>PPO</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">1,398 ± 978</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">31.2 ± 6.3</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">81.5</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">⭐⭐⭐</td>
+      </tr>
+      <tr style="background: #e3f2fd;">
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>MA-DDPG</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">892 ± 423</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">25.1 ± 3.2</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">91.7</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">⭐⭐⭐⭐</td>
+      </tr>
+      <tr style="background: #c8e6c9;">
+        <td style="padding: 12px; border-bottom: 1px solid #eee;">
+<strong>MA-TD3</strong> 🏆</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold;">687 ± 312</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold;">23.4 ± 2.8</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold;">95.3</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr style="background: #e3f2fd;">
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>MA-SAC</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">734 ± 367</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">24.2 ± 3.1</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">93.8</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr style="background: #e3f2fd;">
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>MA-PPO</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">856 ± 445</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">26.7 ± 3.9</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">90.4</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">⭐⭐⭐⭐</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p style="text-align: center; color: #666; font-style: italic; margin-top: 10px;">
+  <em>Results averaged over 1,000 test episodes with combined uncertainty scenarios.</em>
+</p>
+
+<hr>
+
+<h3 id="trajectory-tracking-performance-td3">Trajectory Tracking Performance: TD3</h3>
+
+<h4 id="standard-vs-zero-sum-ma-td3-comparison">Standard vs Zero-Sum MA-TD3 Comparison</h4>
+
+<div style="display: flex; justify-content: space-between; margin: 30px 0;">
+  <div style="text-align: center; width: 48%;">
+    <h4>Standard TD3 Trajectory</h4>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/td3/trajectory_force/plot_trajectory.png" width="100%" alt="Standard TD3 Trajectory" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+  <div style="text-align: center; width: 48%;">
+    <h4>Zero-Sum MA-TD3 Trajectory</h4>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/td3/trajectory_force/plot_trajectory_zs.png" width="100%" alt="Zero-Sum MA-TD3 Trajectory" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+</div>
+
+<div style="display: flex; justify-content: space-between; margin: 30px 0;">
+  <div style="text-align: center; width: 48%;">
+    <h4>Standard TD3 with Control Forces</h4>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/td3/trajectory_force/plot_trajectory_force.png" width="100%" alt="Standard TD3 with Forces" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+  <div style="text-align: center; width: 48%;">
+    <h4>Zero-Sum MA-TD3 with Control Forces</h4>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/td3/trajectory_force/plot_trajectory_force_zs.png" width="100%" alt="Zero-Sum MA-TD3 with Forces" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+</div>
+
+<blockquote>
+  <p><strong>Key Observation:</strong> MA-TD3 maintains tighter trajectories with smaller control-effort fluctuations than standard TD3 in the same scenarios.</p>
+</blockquote>
+
+<hr>
+
+<h3 id="robustness-analysis-under-uncertainty">Robustness Analysis Under Uncertainty</h3>
+
+<h4 id="comparative-performance-all-four-algorithms">Comparative Performance: All Four Algorithms</h4>
+
+<p>The violin plots below show the performance distribution of all four RL algorithms (DDPG, TD3, SAC, PPO) under various uncertainty scenarios. Each plot compares <strong>Standard (single-agent)</strong> vs <strong>Zero-Sum (multi-agent)</strong> variants.</p>
+
+<div style="text-align: center; margin: 30px 0;">
+  <h4>Zero-Sum Multi-Agent RL - All Algorithms Combined</h4>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+  <div style="width: 48%; margin-bottom: 20px;">
+    <h5 style="text-align: center;">Actuator Disturbance</h5>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/ZeroSum/violin_plot/actuator_disturbance.png" width="100%" alt="Actuator Disturbance - ZS" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+  <div style="width: 48%; margin-bottom: 20px;">
+    <h5 style="text-align: center;">Sensor Noise</h5>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/ZeroSum/violin_plot/sensor_noise.png" width="100%" alt="Sensor Noise - ZS" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+  <div style="width: 48%; margin-bottom: 20px;">
+    <h5 style="text-align: center;">Initial Condition Shift</h5>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/ZeroSum/violin_plot/initial_condition_shift.png" width="100%" alt="Initial Condition - ZS" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+  <div style="width: 48%; margin-bottom: 20px;">
+    <h5 style="text-align: center;">Time Delay</h5>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/ZeroSum/violin_plot/time_delay.png" width="100%" alt="Time Delay - ZS" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+  <div style="width: 48%; margin-bottom: 20px;">
+    <h5 style="text-align: center;">Model Mismatch</h5>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/ZeroSum/violin_plot/model_mismatch.png" width="100%" alt="Model Mismatch - ZS" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+  <div style="width: 48%; margin-bottom: 20px;">
+    <h5 style="text-align: center;">Partial Observation</h5>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/ZeroSum/violin_plot/partial_observation.png" width="100%" alt="Partial Observation - ZS" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+</div>
+
+<hr>
+
+<div style="text-align: center; margin: 30px 0;">
+  <h4>Standard Single-Agent RL - All Algorithms Combined</h4>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+  <div style="width: 48%; margin-bottom: 20px;">
+    <h5 style="text-align: center;">Actuator Disturbance</h5>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/standard/violin_plot/actuator_disturbance.png" width="100%" alt="Actuator Disturbance - Standard" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+  <div style="width: 48%; margin-bottom: 20px;">
+    <h5 style="text-align: center;">Sensor Noise</h5>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/standard/violin_plot/sensor_noise.png" width="100%" alt="Sensor Noise - Standard" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+  <div style="width: 48%; margin-bottom: 20px;">
+    <h5 style="text-align: center;">Initial Condition Shift</h5>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/standard/violin_plot/initial_condition_shift.png" width="100%" alt="Initial Condition - Standard" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+  <div style="width: 48%; margin-bottom: 20px;">
+    <h5 style="text-align: center;">Time Delay</h5>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/standard/violin_plot/time_delay.png" width="100%" alt="Time Delay - Standard" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+  <div style="width: 48%; margin-bottom: 20px;">
+    <h5 style="text-align: center;">Model Mismatch</h5>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/standard/violin_plot/model_mismatch.png" width="100%" alt="Model Mismatch - Standard" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+  <div style="width: 48%; margin-bottom: 20px;">
+    <h5 style="text-align: center;">Partial Observation</h5>
+    <img src="https://raw.githubusercontent.com/alibaniasad1999/master-thesis/main/Report/plots/standard/violin_plot/partial_observation.png" width="100%" alt="Partial Observation - Standard" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  </div>
+</div>
+
+<hr>
+
+<h3 id="-key-findings">🎯 Key Findings</h3>
+
+<blockquote>
+  <p>✅ Zero-sum MARL outperforms single-agent RL across every metric<br>
+✅ MA-TD3 offers ~30 % error reduction versus TD3<br>
+✅ Robustness improves across all uncertainty classes with narrower performance distributions<br>
+✅ Real-time deployment is feasible thanks to sub-5 ms inference latency</p>
+</blockquote>
+
+<hr>
+
+<h2 id="-getting-started">🚀 Getting Started</h2>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p><strong>Software Requirements:</strong></p>
+<ul>
+  <li>Python 3.8 or higher</li>
+  <li>PyTorch 2.2.2</li>
+  <li>CUDA 11.8+ (optional, for GPU acceleration)</li>
+  <li>ROS2 Humble (for hardware deployment)</li>
+  <li>CMake 3.16+ (for C++ implementation)</li>
+  <li>LaTeX distribution (for compiling thesis document)</li>
+</ul>
+
+<p><strong>Hardware Requirements:</strong></p>
+<ul>
+  <li>16+ GB RAM (recommended for training)</li>
+  <li>NVIDIA GPU with 6+ GB VRAM (optional, speeds up training significantly)</li>
+</ul>
+
+<h3 id="installation">Installation</h3>
+
+<h4 id="1-clone-the-repository">1. Clone the Repository</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/alibaniasad1999/master-thesis.git
+<span class="nb">cd </span>master-thesis
+</code></pre></div></div>
+
+<h4 id="2-set-up-python-environment">2. Set Up Python Environment</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create virtual environment</span>
+python <span class="nt">-m</span> venv venv
+
+<span class="c"># Activate virtual environment</span>
+<span class="nb">source </span>venv/bin/activate  <span class="c"># Linux/macOS</span>
+<span class="c"># or</span>
+venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate  <span class="c"># Windows</span>
+
+<span class="c"># Install dependencies</span>
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<h4 id="3-verify-installation">3. Verify Installation</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-c</span> <span class="s2">"import torch; import gymnasium; import numpy; print('✓ All packages installed successfully')"</span>
+</code></pre></div></div>
+
+<hr>
+
+<h2 id="-usage-guide">💡 Usage Guide</h2>
+
+<h3 id="training-rl-agents">Training RL Agents</h3>
+
+<h4 id="single-agent-training-baseline">Single-Agent Training (Baseline)</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>Code/Python/TBP/SAC
+jupyter notebook SAC_TBP.ipynb
+</code></pre></div></div>
+
+<p>Follow the notebook to:</p>
+<ol>
+  <li>Configure environment parameters</li>
+  <li>Set hyperparameters</li>
+  <li>Train the agent</li>
+  <li>Evaluate performance</li>
+  <li>Save trained models</li>
+</ol>
+
+<h4 id="zero-sum-multi-agent-training">Zero-Sum Multi-Agent Training</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>Code/Python/TBP/SAC/ZeroSum
+jupyter notebook Zero_Sum_SAC_TBP.ipynb
+</code></pre></div></div>
+
+<p>The notebook demonstrates:</p>
+<ol>
+  <li>Zero-sum game setup</li>
+  <li>Alternating training procedure</li>
+  <li>Nash equilibrium convergence</li>
+  <li>Robustness evaluation</li>
+</ol>
+
+<h3 id="robustness-evaluation">Robustness Evaluation</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>Code/Python/Robust_eval/ZeroSum/sensor_noise
+jupyter notebook sensor_noise.ipynb
+</code></pre></div></div>
+
+<p>This evaluates trained policies under sensor noise perturbations and generates comparison plots.</p>
+
+<h3 id="c-inference-real-time-deployment">C++ Inference (Real-Time Deployment)</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>Code/C
+<span class="nb">mkdir </span>build <span class="o">&amp;&amp;</span> <span class="nb">cd </span>build
+cmake ..
+make
+./main
+</code></pre></div></div>
+
+<p>The C++ implementation loads PyTorch traced models for fast inference.</p>
+
+<h3 id="ros2-integration">ROS2 Integration</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>Code/ROS2
+colcon build
+<span class="nb">source install</span>/setup.bash
+ros2 launch tbp_rl_controler tbp_system.launch.py
+</code></pre></div></div>
+
+<p>This launches:</p>
+<ul>
+  <li>Three-body dynamics simulator node</li>
+  <li>RL controller node</li>
+  <li>Data logging node</li>
+</ul>
+
+<hr>
+
+<h2 id="-why-multi-agent--zero-sum">🎓 Why Multi-Agent &amp; Zero-Sum?</h2>
+
+<p>Many real-world control problems are effectively games:</p>
+
+<div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+  <ul style="margin: 0; padding-left: 20px;">
+    <li>
+<strong>🎯 Pursuit-evasion</strong> – interceptor vs. target aircraft, autonomous car vs. pedestrian prediction</li>
+    <li>
+<strong>🌪️ Disturbance rejection</strong> – controller vs. nature; treat wind-gusts or hardware faults as an adversary</li>
+    <li>
+<strong>🤝 Competitive resource allocation</strong> – multiple robots vying for the same power or bandwidth budget</li>
+  </ul>
+</div>
+
+<p>Model-free RL lifts the need for hand-crafted opponent models; differential-game extensions push agents toward robust <strong>Nash equilibria</strong>, not brittle one-shot optima.</p>
+
+<hr>
+
+<h2 id="-reinforcement-learning--quick-primer">📚 Reinforcement Learning — Quick Primer</h2>
+
+<p>Reinforcement learning (RL) is a paradigm in which an <em>agent</em> discovers an optimal control policy by <strong>interacting</strong> with an <em>environment</em> and maximising <strong>cumulative reward</strong>.</p>
+
+<h3 id="fundamentals">Fundamentals</h3>
+
+<p>At each discrete time $t$ the agent:</p>
+
+<ol>
+  <li>
+<strong>Observes</strong> a state $s_t$</li>
+  <li>
+<strong>Acts</strong> using policy $a_t\sim\pi_\theta(\,\cdot\,\mid s_t)$</li>
+  <li>
+<strong>Receives</strong> a reward $r_t$ and the next state $s_{t+1}$</li>
+</ol>
+
+<p>This loop repeats until a <em>terminal</em> condition resets the episode.<br>
+Conceptually, the environment, agent, and action align with the classic control terms <em>plant</em>, <em>controller</em>, and <em>control input</em>.</p>
+
+<!-- centred, smaller critic-network figure -->
+<div style="text-align:center; margin: 30px 0;">
+  <img src="/assets/images/rl.png" alt="Critic network (value)." width="450" style="display:block;margin:0 auto; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  <p style="margin-top: 10px; color: #666; font-style: italic;">The agent–environment process in a Markov decision process</p>
+</div>
+
+<p>Mathematically, the problem is cast as a <strong>Markov Decision Process (MDP)</strong><br>
+$\langle S,A,P,r,q_0,\gamma\rangle$:</p>
+
+<ul>
+  <li>$S,\;A$ – state and action sets</li>
+  <li>$P(s’\mid s,a)$ – transition kernel</li>
+  <li>$r(s)\in\mathbb R$ – reward</li>
+  <li>$q_0$ – initial-state distribution</li>
+  <li>$\gamma\in[0,1]$ – discount factor</li>
+</ul>
+
+<p>The agent seeks to maximise the <strong>expected return</strong></p>
+
+\[G_t=\sum_{k=t+1}^{T}\gamma^{\,k-t-1}r_k.\]
+
+<p>Value functions formalise “how good” a state or action is:</p>
+
+\[\begin{aligned}
+V^\pi(s_t) &amp;=\mathbb E_\pi\Bigl[G_t\mid s_t\Bigr],\\[2pt]
+Q^\pi(s_t,a_t) &amp;=\mathbb E_\pi\Bigl[G_t\mid s_t,a_t\Bigr].
+\end{aligned}\]
+
+<hr>
+
+<h2 id="-algorithms">📖 Algorithms</h2>
+
+<h3 id="actorcritic-frameworks--neural-networks">Actor–Critic Frameworks &amp; Neural Networks</h3>
+
+<p>Most modern continuous-control algorithms are <strong>actor–critic</strong>:</p>
+
+<ul>
+  <li>
+<strong>Actor</strong> $\pi_{\theta}(a\mid s)$ – the policy</li>
+  <li>
+<strong>Critic</strong> $Q_{\phi}$ or $V_{\psi}$ – estimates return</li>
+</ul>
+
+<p>Both are neural networks (fully-connected, ReLU) trained with gradient-based updates.</p>
+
+<div style="display: flex; justify-content: space-around; margin: 30px 0;">
+  <div style="text-align: center; width: 45%;">
+    <img src="/assets/images/actor.png" alt="Actor network" width="100%" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <p style="margin-top: 10px; color: #666; font-style: italic;">Actor network (policy)</p>
+  </div>
+  <div style="text-align: center; width: 45%;">
+    <img src="/assets/images/critic.png" alt="Critic network" width="100%" style="border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <p style="margin-top: 10px; color: #666; font-style: italic;">Critic network (value)</p>
+  </div>
+</div>
+
+<hr>
+
+<h3 id="ddpg-algorithm-deep-deterministic-policy-gradient-multi-agent-zero-sum">DDPG Algorithm (Deep Deterministic Policy Gradient, Multi-Agent Zero-Sum)</h3>
+
+<ul>
+  <li>
+<strong>Input:</strong> initial policy parameters $\theta_1$, $\theta_2$, Q-function parameters $\phi_1$, $\phi_2$, empty replay buffer $\mathcal{D}$</li>
+  <li>
+<strong>Set target parameters</strong> equal to main parameters $\theta_{\text{targ},1} \leftarrow \theta_1$, $\theta_{\text{targ},2} \leftarrow \theta_2$, $\phi_{\text{targ},1} \leftarrow \phi_1$, $\phi_{\text{targ},2} \leftarrow \phi_2$</li>
+  <li>
+<strong>Repeat:</strong>
+    <ul>
+      <li>Observe state $s$</li>
+      <li>Select action for player 1: $a_1 = \text{clip}(\mu_{\theta_1}(s) + \epsilon_1, a_{Low}, a_{High})$, where $\epsilon_1 \sim \mathcal{N}$</li>
+      <li>Select action for player 2: $a_2 = \text{clip}(\mu_{\theta_2}(s) + \epsilon_2, a_{Low}, a_{High})$, where $\epsilon_2 \sim \mathcal{N}$</li>
+      <li>Execute actions $(a_1, a_2)$ in the environment</li>
+      <li>Observe next state $s’$, reward pair $(r_1, r_2)$ for both players, and done signal $d$</li>
+      <li>Store transition $(s, a_1, a_2, r_1, r_2, s’, d)$ in replay buffer $\mathcal{D}$</li>
+      <li>If $s’$ is terminal: Reset environment state</li>
+      <li>If it’s time to update:
+        <ul>
+          <li>For j in range (however many updates):
+            <ul>
+              <li>Randomly sample a batch of transitions, $B = { (s, a_1, a_2, r_1, r_2, s’, d) }$ from $\mathcal{D}$</li>
+              <li>Compute targets for both players:
+                <ul>
+                  <li>$y_1 = r_1 + \gamma (1 - d) Q_{\phi_{\text{targ},1}}(s’, \mu_{\theta_{\text{targ},1}}(s’), \mu_{\theta_{\text{targ},2}}(s’))$</li>
+                  <li>$y_2 = r_2 + \gamma (1 - d) Q_{\phi_{\text{targ},2}}(s’, \mu_{\theta_{\text{targ},1}}(s’), \mu_{\theta_{\text{targ},2}}(s’))$</li>
+                </ul>
+              </li>
+              <li>Update Q-functions for both players by one step of gradient descent:
+                <ul>
+                  <li>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>$\nabla_{\phi_1}\,\frac{1}{</td>
+                          <td>B</td>
+                          <td>}\sum_{(s,a_1,a_2,r_1,s^{\prime},d)\in B}\bigl(Q_{\phi_1}(s,a_1,a_2)\;-\;y_1\bigr)^{2}$</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </li>
+                  <li>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>$\nabla_{\phi_2}\,\frac{1}{</td>
+                          <td>B</td>
+                          <td>}\sum_{(s,a_1,a_2,r_2,s^{\prime},d)\in B}\bigl(Q_{\phi_2}(s,a_1,a_2)\;-\;y_2\bigr)^{2}$</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </li>
+                </ul>
+              </li>
+              <li>Update policies for both players by one step of gradient ascent:
+                <ul>
+                  <li>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>$\nabla_{\theta_1}\,\frac{1}{</td>
+                          <td>B</td>
+                          <td>}\sum_{s\in B}Q_{\phi_1}\bigl(s,\mu_{\theta_1}(s),\mu_{\theta_2}(s)\bigr)$</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </li>
+                  <li>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>$\nabla_{\theta_2}\,\frac{1}{</td>
+                          <td>B</td>
+                          <td>}\sum_{s\in B}Q_{\phi_2}\bigl(s,\mu_{\theta_1}(s),\mu_{\theta_2}(s)\bigr)$</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </li>
+                </ul>
+              </li>
+              <li>Update target networks for both players:
+                <ul>
+                  <li>$\phi_{\text{targ},1} \leftarrow \rho \phi_{\text{targ},1} + (1 - \rho) \phi_1$</li>
+                  <li>$\phi_{\text{targ},2} \leftarrow \rho \phi_{\text{targ},2} + (1 - \rho) \phi_2$</li>
+                  <li>$\theta_{\text{targ},1} \leftarrow \rho \theta_{\text{targ},1} + (1 - \rho) \theta_1$</li>
+                  <li>$\theta_{\text{targ},2} \leftarrow \rho \theta_{\text{targ},2} + (1 - \rho) \theta_2$</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Until convergence</strong></li>
+</ul>
+
+<hr>
+
+<h3 id="td3-algorithm-twin-delayed-deep-deterministic-policy-gradient-multi-agent-zero-sum">TD3 Algorithm (Twin Delayed Deep Deterministic Policy Gradient, Multi-Agent Zero-Sum)</h3>
+
+<ul>
+  <li>
+<strong>Input:</strong> initial policy parameters $\theta_1,\theta_2$, twin-critic parameters<br>
+${\phi_{1,1},\phi_{1,2}}$ and ${\phi_{2,1},\phi_{2,2}}$, empty replay buffer $\mathcal D$</li>
+  <li>
+<strong>Set targets:</strong><br>
+$\theta_{\text{targ},i}\leftarrow\theta_i,\;\;
+ \phi_{\text{targ},i,j}\leftarrow\phi_{i,j}\quad (i\in{1,2},\,j\in{1,2})$</li>
+  <li>
+<strong>Repeat</strong>
+    <ul>
+      <li>Observe state $s$</li>
+      <li>
+<strong>Action selection</strong><br>
+$a_i=\operatorname{clip}\bigl(\mu_{\theta_i}(s)+\epsilon_i,\;a_{\min},a_{\max}\bigr),\;
+  \epsilon_i\sim\mathcal N\quad (i=1,2)$</li>
+      <li>Execute $(a_1,a_2)$; observe $s’$, reward pair $(r,-r)$, done $d$</li>
+      <li>Store $(s,a_1,a_2,r,s’,d)$ in $\mathcal D$</li>
+      <li>
+<strong>Every</strong> $M$ <strong>steps do:</strong> (for each update iteration $j$)
+        <ul>
+          <li>Sample mini-batch $B\subset\mathcal D$</li>
+          <li>
+<strong>Target actions (policy smoothing)</strong><br>
+$\tilde a_i = \operatorname{clip}\bigl(\mu_{\theta_{\text{targ},i}}(s’) +<br>
+\operatorname{clip}(\eta_i,-c,c),\,a_{\min},a_{\max}\bigr),\;\eta_i\sim\mathcal N$</li>
+          <li>
+<strong>Target Q-values</strong> (use <em>minimum</em> of twins)<br>
+$y = r + \gamma(1-d)\,\min_{j}\,Q_{\phi_{\text{targ},1,j}}\bigl(s’,\tilde a_1,\tilde a_2\bigr)$<br>
+(player 2 receives $-y$)</li>
+          <li>
+<strong>Critic updates</strong> $(j=1,2)$:<br>
+$\nabla_{\phi_{i,j}}\;\frac1{|B|}\sum_{B}\bigl(Q_{\phi_{i,j}}(s,a_1,a_2)-\sigma_i\,y\bigr)^2$<br>
+with $\sigma_1=+1,\;\sigma_2=-1$</li>
+          <li>
+<strong>Delayed actor update</strong> (every $d_{\text{policy}}$ iterations)<br>
+$\nabla_{\theta_i}\;\frac1{|B|}\sum_{s\in B}Q_{\phi_{i,1}}(s,\mu_{\theta_1}(s),\mu_{\theta_2}(s))$</li>
+          <li>
+<strong>Target-network Polyak averaging</strong><br>
+$\phi_{\text{targ},i,j}\leftarrow\tau\phi_{i,j}+(1-\tau)\phi_{\text{targ},i,j}$<br>
+$\theta_{\text{targ},i}\leftarrow\tau\theta_i+(1-\tau)\theta_{\text{targ},i}$</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Until convergence</strong></li>
+</ul>
+
+<hr>
+
+<h3 id="sac-algorithm-soft-actor-critic-multi-agent-zero-sum">SAC Algorithm (Soft Actor-Critic, Multi-Agent Zero-Sum)</h3>
+
+<ul>
+  <li>
+<strong>Input:</strong> policy parameters $\theta_1,\theta_2$, twin critics ${\phi_{1,1},\phi_{1,2}}$,<br>
+${\phi_{2,1},\phi_{2,2}}$, temperature parameters $\alpha_1,\alpha_2$, replay buffer $\mathcal D$</li>
+  <li>Initialise target critics $\phi_{\text{targ},i,j}\leftarrow\phi_{i,j}$</li>
+  <li>
+<strong>Repeat</strong>
+    <ul>
+      <li>Observe state $s$</li>
+      <li>
+<strong>Sample actions</strong> (re-parameterisation):<br>
+$a_i=\tanh\bigl(\mu_{\theta_i}(s)+\sigma_{\theta_i}(s)\,\epsilon_i\bigr),\;\epsilon_i\sim\mathcal N$</li>
+      <li>Execute $(a_1,a_2)$; observe $s’$, reward $(r,-r)$, done $d$</li>
+      <li>Store transition in $\mathcal D$</li>
+      <li>
+<strong>For</strong> $j=1\ldots N_{\text{updates}}$:
+        <ul>
+          <li>Sample mini-batch $B$</li>
+          <li>
+<strong>Target value with entropy bonus</strong><br>
+$\tilde a_i’\sim\pi_{\theta_i}(s’),quad<br>
+ \hat Q_{i}(s’,\tilde a_1’,\tilde a_2’)=\min_{k}Q_{\phi_{\text{targ},i,k}}(s’,\tilde a_1’,\tilde a_2’)$</li>
+          <li>$y = r + \gamma(1-d)\bigl(\hat Q_{1}(s’,\cdot) - \alpha_1\log\pi_{\theta_1}(\tilde a_1’|s’)\bigr)$<br>
+(player 2 uses $-y$ with $\alpha_2$)</li>
+          <li>
+<strong>Critic losses</strong><br>
+$\mathcal L_{\phi_{i,k}}=\frac1{|B|}\sum_{B}\bigl(Q_{\phi_{i,k}}(s,a_1,a_2)-\sigma_i\,y\bigr)^2$</li>
+          <li>
+<strong>Policy losses</strong><br>
+$\mathcal L_{\theta_i}=\frac1{|B|}\sum_{s\in B}<br>
+  \bigl(\alpha_i\log\pi_{\theta_i}(a_i|s)-Q_{\phi_{i,1}}(s,a_1,a_2)\bigr)$</li>
+          <li>
+<strong>Temperature update</strong> (optional, per player)<br>
+$\nabla_{\alpha_i}\;\alpha_i\bigl(-\log\pi_{\theta_i}(a_i|s)-\mathcal H_\text{target}\bigr)$</li>
+          <li>
+<strong>Target critics</strong><br>
+$\phi_{\text{targ},i,k}\leftarrow\tau\phi_{i,k}+(1-\tau)\phi_{\text{targ},i,k}$</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Until convergence</strong></li>
+</ul>
+
+<hr>
+
+<h3 id="ppo-algorithm-proximal-policy-optimisation-multi-agent-zero-sum">PPO Algorithm (Proximal Policy Optimisation, Multi-Agent Zero-Sum)</h3>
+
+<ul>
+  <li>
+<strong>Input:</strong> policy parameters $\theta_1,\theta_2$, critic parameters $\psi_1,\psi_2$</li>
+  <li>
+<strong>Repeat</strong>
+    <ul>
+      <li>
+<strong>Collect trajectories</strong> for $T$ steps using current policies $\pi_{\theta_1},\pi_{\theta_2}$</li>
+      <li>For each step $t$ compute
+        <ul>
+          <li>
+<strong>Returns:</strong> $G_t^1 = \sum_{k\ge t}\gamma^{k-t}r_k$, $G_t^2=-G_t^1$</li>
+          <li>
+<strong>Advantages:</strong><br>
+$A_t^i = G_t^i - V_{\psi_i}(s_t)$</li>
+        </ul>
+      </li>
+      <li>
+<strong>For</strong> $K$ <strong>epochs</strong>, minibatch over collected data:
+        <ul>
+          <li>
+<strong>Ratio:</strong><br>
+$r_t^i(\theta) = \dfrac{\pi_{\theta_i}(a_t|s_t)}{\pi_{\theta_{i,\text{old}}}(a_t|s_t)}$</li>
+          <li>
+<strong>Clipped objective:</strong><br>
+$\mathcal L_{\theta_i}=<br>
+  \frac1{|B|}\sum_{t\in B}\min\bigl(r_t^iA_t^i,\;\operatorname{clip}(r_t^i,1-\epsilon,1+\epsilon)A_t^i\bigr)$</li>
+          <li>
+<strong>Critic loss:</strong><br>
+$\mathcal L_{\psi_i}= \frac1{|B|}\sum_{t\in B}\bigl(V_{\psi_i}(s_t)-G_t^i\bigr)^2$</li>
+          <li>
+<strong>Update</strong> $\theta_i$ and $\psi_i$ via gradient ascent / descent</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Until convergence</strong></li>
+</ul>
+
+<hr>
+
+<h3 id="notation-key">Notation Key</h3>
+
+<ul>
+  <li>$\theta_i$ — actor parameters for player $i$</li>
+  <li>$\phi_{i,j}$ — $j$-th Q-critic for player $i$ (TD3/SAC)</li>
+  <li>$\psi_i$ — state-value net for player $i$ (PPO)</li>
+  <li>$\gamma$ — discount factor</li>
+  <li>$\tau$ — Polyak coefficient</li>
+  <li>$\epsilon$ — PPO clip range</li>
+</ul>
+
+<hr>
+
+<h2 id="-reproducibility">🎯 Reproducibility</h2>
+
+<h3 id="reproduce-training-results">Reproduce Training Results</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Train MA-TD3 agent</span>
+<span class="nb">cd </span>Code/Python/TBP/TD3/ZeroSum
+jupyter notebook Zero_Sum_TD3_TBP.ipynb
+<span class="c"># Execute all cells</span>
+</code></pre></div></div>
+
+<h3 id="reproduce-evaluation-results">Reproduce Evaluation Results</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run robustness evaluation</span>
+<span class="nb">cd </span>Code/Python/Robust_eval/ZeroSum/All_in_one/actuator_disturbance
+jupyter notebook all_in_one.ipynb
+</code></pre></div></div>
+
+<h3 id="random-seeds">Random Seeds</h3>
+
+<p>All experiments use fixed random seeds for reproducibility:</p>
+<ul>
+  <li>NumPy: <code class="language-plaintext highlighter-rouge">np.random.seed(42)</code>
+</li>
+  <li>PyTorch: <code class="language-plaintext highlighter-rouge">torch.manual_seed(42)</code>
+</li>
+  <li>Gymnasium: <code class="language-plaintext highlighter-rouge">env.seed(42)</code>
+</li>
+</ul>
+
+<hr>
+
+<h2 id="-citation">📚 Citation</h2>
+
+<p>If you use this work in your research, please cite:</p>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@mastersthesis</span><span class="p">{</span><span class="nl">baniasad2025robust</span><span class="p">,</span>
+  <span class="na">author</span>       <span class="p">=</span> <span class="s">{Ali Bani Asad}</span><span class="p">,</span>
+  <span class="na">title</span>        <span class="p">=</span> <span class="s">{Robust Reinforcement Learning Differential Game Guidance 
+                  in Low-Thrust, Multi-Body Dynamical Environments}</span><span class="p">,</span>
+  <span class="na">school</span>       <span class="p">=</span> <span class="s">{Sharif University of Technology}</span><span class="p">,</span>
+  <span class="na">year</span>         <span class="p">=</span> <span class="s">{2025}</span><span class="p">,</span>
+  <span class="na">address</span>      <span class="p">=</span> <span class="s">{Tehran, Iran}</span><span class="p">,</span>
+  <span class="na">month</span>        <span class="p">=</span> <span class="s">{September}</span><span class="p">,</span>
+  <span class="na">type</span>         <span class="p">=</span> <span class="s">{Master's Thesis}</span><span class="p">,</span>
+  <span class="na">note</span>         <span class="p">=</span> <span class="s">{Department of Aerospace Engineering}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr>
+
+<h2 id="-contact">📧 Contact</h2>
+
+<blockquote>
+  <p><strong>Ali Bani Asad</strong><br>
+Department of Aerospace Engineering, Sharif University of Technology<br>
+📧 ali_baniasad@ae.sharif.edu<br>
+🔗 <a href="https://github.com/alibaniasad1999" target="_blank" rel="noopener noreferrer">@alibaniasad1999</a></p>
+
+  <p><strong>Supervisor — Dr. Hadi Nobahari</strong><br>
+📧 nobahari@sharif.edu</p>
+</blockquote>
+
+<hr>
+
+<h2 id="-acknowledgments">🙏 Acknowledgments</h2>
+
+<p>This research was conducted at the <strong>Sharif University of Technology</strong>, Department of Aerospace Engineering, under the supervision of <strong>Dr. Hadi Nobahari</strong> and the advisory of <strong>Dr. Seyed Ali Emami Khooansari</strong>.</p>
+
+<p>Special thanks to:</p>
+<ul>
+  <li>The Aerospace Engineering Department for providing computational resources</li>
+  <li>The open-source RL community for excellent libraries and tools</li>
+  <li>Colleagues and fellow researchers for valuable discussions and feedback</li>
+</ul>
+
+<hr>
+
+<h2 id="-license">📜 License</h2>
+
+<p>This project is licensed under the MIT License - see the <a href="https://github.com/alibaniasad1999/master-thesis/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">LICENSE</a> file for details.</p>
+
+<hr>
+
+<h2 id="-related-resources">🔗 Related Resources</h2>
+
+<ul>
+  <li>
+<strong>PyTorch</strong>: <a href="https://pytorch.org/" target="_blank" rel="noopener noreferrer">https://pytorch.org/</a>
+</li>
+  <li>
+<strong>Gymnasium</strong>: <a href="https://gymnasium.farama.org/" target="_blank" rel="noopener noreferrer">https://gymnasium.farama.org/</a>
+</li>
+  <li>
+<strong>ROS2</strong>: <a href="https://docs.ros.org/en/humble/" target="_blank" rel="noopener noreferrer">https://docs.ros.org/en/humble/</a>
+</li>
+  <li>
+<strong>Stable-Baselines3</strong>: <a href="https://stable-baselines3.readthedocs.io/" target="_blank" rel="noopener noreferrer">https://stable-baselines3.readthedocs.io/</a>
+</li>
+  <li>
+<strong>Three-Body Problem</strong>: <a href="https://en.wikipedia.org/wiki/Three-body_problem" target="_blank" rel="noopener noreferrer">https://en.wikipedia.org/wiki/Three-body_problem</a>
+</li>
+</ul>
+
+<hr>
+
+<div align="center" style="margin: 40px 0;">
+  <h3>⭐ If you find this research useful, please consider giving it a star! ⭐</h3>
+  <p style="color: #666; font-style: italic;">Made with ❤️ at Sharif University of Technology</p>
+</div>
+
+
+<!-- Comments only for posts -->
+
+
+            </article>
+        </main>
+
+        <footer>
+          <p class="copy">
+            <small> © Ali BaniAsad 2026
+                    | Powered by Jekyll and
+                    <a target="_blank" href="https://github.com/jitinnair1/gradfolio/" rel="noopener noreferrer">Gradfolio</a>.
+                    Last updated on 11 February 2026
+            </small>
+          </p>
+
+        <div class="rounded-social-buttons">
+<a title="" class="social-button email" itemprop="email" href="mailto:alibaniasad1999@gmail.com" target="_blank">
+<i class="far fa-envelope"></i>
+</a><a title="" class="social-button linkedin" href="https://www.linkedin.com/in/alibaniasad1999/" itemprop="sameAs" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-linkedin-in"></i>
+</a><a title="" class="social-button google-scholar" itemprop="sameAs" href="https://scholar.google.com/citations?user=KeKpSvEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i>
+  </a><a class="social-button github" href="https://github.com/alibaniasad1999" title="" target="_blank" rel="noopener noopener noreferrer">
+  <i class="fab fa-github"></i>
+</a><a title="" class="social-button orcid" href="https://orcid.org/0009-0005-8094-1728" itemprop="sameAs" target="_blank" rel="noopener noreferrer">
+<i class="fab fa-orcid"></i>
+</a>
+</div>
+
+
+        </footer>
+
+        <!-- Google Analytics Tracking code -->
+<script src="https://cdn.jsdelivr.net/npm/ga-lite@1/dist/ga-lite.min.js" async></script>
+<script>
+var galite = galite || {};
+galite.UA = '';
+</script>
+
+        <script src="/assets/js/theme-toggle.js"></script>
+        <script src="/assets/js/particles.js"></script>
+
+    </body>
+
+</html>

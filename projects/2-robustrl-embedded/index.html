@@ -1,0 +1,588 @@
+<link rel="icon" type="image/png" href="/bai.png">
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link rel="stylesheet" href="/assets/css/main.css">
+
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle dark / light">
+            <i id="theme-icon" class="fa-solid fa-moon"></i>
+        </button>
+
+        <h1 class="post-headline">Ali BaniAsad</h1>
+        <h3 class="post-description">Robotics Engineer at Fasta | Robust RL & Embedded AI Researcher | Seeking PhD Positions</h3>
+
+        <div class="links scroll">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <!-- <a href="/research/">Research</a> -->
+        <a href="/projects/">Projects</a>
+        <a href="/teaching/">Teaching</a>
+        <a href="/publications/">Publications</a>
+        <a href="/cv/">CV</a>
+        <!-- <a href="/blog/">Blog</a>
+        <a href="/archive/">Archive</a> -->
+</div>
+
+        <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Robust RL with Transformer Detection | Ali BaniAsad</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Robust RL with Transformer Detection" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Zero-sum robust deep RL with transformer-based disturbance detection and policy mixing for real-time control on embedded GPUs." />
+<meta property="og:description" content="Zero-sum robust deep RL with transformer-based disturbance detection and policy mixing for real-time control on embedded GPUs." />
+<link rel="canonical" href="https://alibaniasad1999.github.io/projects/2-robustrl-embedded/" />
+<meta property="og:url" content="https://alibaniasad1999.github.io/projects/2-robustrl-embedded/" />
+<meta property="og:site_name" content="Ali BaniAsad" />
+<meta property="og:image" content="https://alibaniasad1999.github.io/assets/images/Zero-sum%20RL%20Concept%20logo.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-02-11T13:46:25+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://alibaniasad1999.github.io/assets/images/Zero-sum%20RL%20Concept%20logo.png" />
+<meta property="twitter:title" content="Robust RL with Transformer Detection" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-11T13:46:25+00:00","datePublished":"2026-02-11T13:46:25+00:00","description":"Zero-sum robust deep RL with transformer-based disturbance detection and policy mixing for real-time control on embedded GPUs.","headline":"Robust RL with Transformer Detection","image":"https://alibaniasad1999.github.io/assets/images/Zero-sum%20RL%20Concept%20logo.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://alibaniasad1999.github.io/projects/2-robustrl-embedded/"},"url":"https://alibaniasad1999.github.io/projects/2-robustrl-embedded/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+        <!-- insert favicons, used https://realfavicongenerator.net/ -->
+<link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+
+        <!-- MathJax -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+     processEscapes: true
+    }
+  });
+</script>
+
+
+        <!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
+        <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v6.7.2/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+
+    </head>
+
+    <body>
+        <canvas id="particle-canvas"></canvas>
+        <main>
+            <article>
+                <h1 class="post-headline">Robust RL with Transformer Detection</h1>
+<p class="meta"><small>February 11, 2026</small></p>
+
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<h1 id="-zero-sum-robust-deep-rl-for-real-time-embedded-control">
+<i class="fa-solid fa-shield-halved"></i> Zero-Sum Robust Deep RL for Real-Time Embedded Control</h1>
+
+<h4 id="transformer-based-disturbance-detection--dual-policy-mixing-on-nvidia-jetson">Transformer-Based Disturbance Detection &amp; Dual-Policy Mixing on NVIDIA Jetson</h4>
+
+<blockquote>
+  <p><strong>Ongoing Research</strong>
+Ali BaniAsad – Fasta Robotics</p>
+</blockquote>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/PyTorch-2.x-ee4c2c.svg?style=for-the-badge&amp;logo=pytorch" alt="PyTorch">
+  <img src="https://img.shields.io/badge/JAX-MJX-blue.svg?style=for-the-badge" alt="JAX">
+  <img src="https://img.shields.io/badge/TensorRT-FP16/INT8-76b900.svg?style=for-the-badge&amp;logo=nvidia" alt="TensorRT">
+  <img src="https://img.shields.io/badge/ROS2-Humble-blue.svg?style=for-the-badge&amp;logo=ros" alt="ROS2">
+  <img src="https://img.shields.io/badge/Jetson-Orin-76b900.svg?style=for-the-badge&amp;logo=nvidia" alt="Jetson">
+</p>
+
+<hr>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Deploying reinforcement learning policies on physical robots requires robustness to unmodeled disturbances, parameter uncertainty, and the sim-to-real gap. This project presents a methodology for robust control that frames the problem as a <strong>two-player zero-sum Markov game</strong> in which a learned adversary systematically probes the weaknesses of the control policy during training.</p>
+
+<p>The architecture maintains two distinct policies:</p>
+<ul>
+  <li>
+<strong>Optimal policy</strong> $\pi^{\text{opt}}$: trained on the nominal environment to maximize expected return</li>
+  <li>
+<strong>Robust policy</strong> $\pi^{\text{rob}}$: co-trained against the adversary to maximize worst-case return</li>
+</ul>
+
+<p>At runtime, a lightweight <strong>transformer encoder</strong> processes a sliding window of recent observations to produce a real-time disturbance estimate – both a detection probability and an estimated magnitude. A learned <strong>gating function</strong> converts this estimate into a continuous mixing coefficient $\alpha_t \in [0,1]$ that blends the two policies:</p>
+
+\[a_t = \alpha_t \, \pi^{\text{rob}}(s_t) + (1 - \alpha_t) \, \pi^{\text{opt}}(s_t)\]
+
+<p>All neural network components are exported through <strong>ONNX to TensorRT</strong> engines optimized for the <strong>NVIDIA Jetson</strong> platform and integrated into a <strong>ROS 2</strong> control node achieving sub-two-millisecond inference latency at up to 500 Hz.</p>
+
+<div style="text-align:center; margin: 40px 0;">
+  <img src="/assets/images/Zero-sum%20RL%20Concept%20.png" alt="Zero-Sum Robust RL System Overview" width="720" style="display:block; margin:0 auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <p style="margin-top: 15px; color: #666; font-style: italic;">System overview: dual-policy architecture with transformer-based disturbance detection and real-time gating on embedded GPU.</p>
+</div>
+
+<hr>
+
+<h2 id="key-contributions">Key Contributions</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; margin: 20px 0;">
+  <div style="flex: 1; min-width: 280px; background: #e3f2fd; padding: 15px; border-radius: 8px;">
+    <h4>Dual-Policy Mixing</h4>
+    <p>Separate optimal and robust policies blended via a continuous gating coefficient -- preserving nominal performance while providing worst-case robustness on demand.</p>
+  </div>
+  <div style="flex: 1; min-width: 280px; background: #fff3e0; padding: 15px; border-radius: 8px;">
+    <h4>Transformer Disturbance Detector</h4>
+    <p>Lightweight transformer encoder on a sliding window of observations outputs detection probability and estimated magnitude in real time.</p>
+  </div>
+  <div style="flex: 1; min-width: 280px; background: #e8f5e9; padding: 15px; border-radius: 8px;">
+    <h4>End-to-End Deployment Pipeline</h4>
+    <p>ONNX → TensorRT (FP16/INT8) → ROS 2 node on NVIDIA Jetson Orin with &lt;2 ms inference latency.</p>
+  </div>
+</div>
+
+<hr>
+
+<h2 id="problem-formulation">Problem Formulation</h2>
+
+<h3 id="two-player-zero-sum-markov-game">Two-Player Zero-Sum Markov Game</h3>
+
+<p>The environment is modeled as a game $(S, \mathcal{A}^c, \mathcal{A}^d, P, R, \gamma)$ where:</p>
+
+<ul>
+  <li>
+<strong>Controller</strong> $\pi^c$: maximizes expected discounted return</li>
+  <li>
+<strong>Adversary</strong> $\pi^d$: minimizes it (receives $-R$)</li>
+</ul>
+
+<p>A Nash equilibrium $({\pi^{c,<em>}}, {\pi^{d,</em>}})$ satisfies:</p>
+
+\[V^{\pi^{c,*}, \pi^d}(s) \ge V^{\pi^{c,*}, \pi^{d,*}}(s) \ge V^{\pi^c, \pi^{d,*}}(s) \quad \forall\, s, \pi^c, \pi^d\]
+
+<p>The minimax value function:</p>
+
+\[V^*(s) = \max_{\pi^c} \min_{\pi^d} \mathbb{E}\left[\sum_{t=0}^{\infty} \gamma^t r(s_t, a_t^c, a_t^d) \,\middle|\, s_0 = s\right]\]
+
+<h3 id="disturbance-model">Disturbance Model</h3>
+
+<p>Two instantiations of adversarial disturbance:</p>
+
+<ol>
+  <li>
+<strong>Additive force/torque perturbation</strong>: $\dot{q} = f(q, \dot{q}, a^c) + B\, a^d$</li>
+  <li>
+<strong>External body force</strong>: wrench applied to a specified body (pushes, wind, contact)</li>
+</ol>
+
+<p>The adversary’s action is bounded: $|a^d|<em>2 \le \epsilon$, where $\epsilon &gt; 0$ is the disturbance budget with curriculum scheduling from $0$ to $\epsilon</em>{\max}$.</p>
+
+<hr>
+
+<h2 id="architecture">Architecture</h2>
+
+<h3 id="dual-policy-training">Dual-Policy Training</h3>
+
+<div style="display: flex; justify-content: space-around; margin: 20px 0;">
+  <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; width: 45%;">
+    <h4>Phase 1: Optimal Policy</h4>
+    <p>Train $\pi^{\text{opt}}$ with SAC/TD3/PPO on nominal environment (no adversary). Maximizes expected return under nominal dynamics.</p>
+  </div>
+  <div style="background: #ffebee; padding: 15px; border-radius: 8px; width: 45%;">
+    <h4>Phase 2: Robust Policy + Adversary</h4>
+    <p>Co-train $\pi^{\text{rob}}$ and $\pi^{\text{adv}}$ in alternation. Adversary output: $a^d = \epsilon \cdot \tanh(\text{NN}_\psi(o))$. Curriculum annealing of $\epsilon$.</p>
+  </div>
+</div>
+
+<h3 id="transformer-disturbance-detector">Transformer Disturbance Detector</h3>
+
+<p>The detector is a lightweight transformer encoder processing a sliding window of $L$ observations:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Layers $N_L$</td>
+      <td>2–4</td>
+    </tr>
+    <tr>
+      <td>Model dimension $d_{\text{model}}$</td>
+      <td>64–128</td>
+    </tr>
+    <tr>
+      <td>Attention heads $N_H$</td>
+      <td>2–4</td>
+    </tr>
+    <tr>
+      <td>Window length $L$</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>Parameters</td>
+      <td>~50k</td>
+    </tr>
+    <tr>
+      <td>Latency (Jetson Orin, TensorRT)</td>
+      <td>&lt; 0.5 ms</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Output heads:</strong></p>
+<ul>
+  <li>
+<strong>Detection branch</strong>: linear $\to$ sigmoid $\to$ $p_t \in [0,1]$</li>
+  <li>
+<strong>Magnitude branch</strong>: linear $\to$ softplus $\to$ $\hat{\delta}_t \ge 0$</li>
+</ul>
+
+<p><strong>Training loss</strong> (supervised on logged adversarial data):</p>
+
+\[\mathcal{L} = \mathcal{L}_{\text{BCE}}(p_t, y_t) + \lambda \, \mathcal{L}_{\text{MSE}}(\hat{\delta}_t, \delta_t)\]
+
+<h3 id="gating-rule">Gating Rule</h3>
+
+<p>The mixing coefficient is computed via a learned gating function:</p>
+
+<p><strong>Linear gating:</strong></p>
+
+\[\alpha_t = \sigma(w_p \cdot p_t + w_\delta \cdot \hat{\delta}_t + b)\]
+
+<p><strong>MLP gating</strong> (more expressive):</p>
+
+\[\alpha_t = f_\phi(p_t, \hat{\delta}_t)\]
+
+<p>When $\alpha_t \approx 0$: nominal-optimal policy. When $\alpha_t \approx 1$: robust policy. Soft mixing avoids chattering at the decision boundary.</p>
+
+<hr>
+
+<h2 id="deployment-pipeline">Deployment Pipeline</h2>
+
+<h3 id="export-path">Export Path</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PyTorch / JAX  --&gt;  torch.jit.trace / jax.export
+       |
+    ONNX (opset 17)
+       |
+    TensorRT (trtexec)
+       |-- FP16 for policy networks
+       |-- INT8 with calibration for transformer
+       |
+    ROS 2 Node (Jetson Orin)
+</code></pre></div></div>
+
+<h3 id="inference-latency-budget-500-hz-on-jetson-orin-maxn">Inference Latency Budget (500 Hz on Jetson Orin MAXN)</h3>
+
+<div style="overflow-x: auto; margin: 20px 0;">
+  <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <thead>
+      <tr style="background: #76b900; color: white;">
+        <th style="padding: 12px; text-align: left;">Component</th>
+        <th style="padding: 12px; text-align: center;">Target Latency</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 12px; border-bottom: 1px solid #eee;">Transformer forward pass ($\mathcal{T}_\theta$)</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">&lt; 0.50 ms</td>
+      </tr>
+      <tr style="background: #f9f9f9;">
+        <td style="padding: 12px; border-bottom: 1px solid #eee;">Policy forward pass ($\pi^{\text{opt}}$)</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">&lt; 0.30 ms</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px; border-bottom: 1px solid #eee;">Policy forward pass ($\pi^{\text{rob}}$)</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">&lt; 0.30 ms</td>
+      </tr>
+      <tr style="background: #f9f9f9;">
+        <td style="padding: 12px; border-bottom: 1px solid #eee;">Gating computation ($f_\phi$)</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">&lt; 0.05 ms</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px; border-bottom: 1px solid #eee;">ROS message serialization + publish</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">&lt; 0.20 ms</td>
+      </tr>
+      <tr style="background: #e8f5e9; font-weight: bold;">
+        <td style="padding: 12px;">Total</td>
+        <td style="padding: 12px; text-align: center;">&lt; 1.35 ms</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>The two policy forward passes run concurrently on separate <strong>CUDA streams</strong>, reducing effective policy inference from 0.60 ms to ~0.35 ms. A 0.65 ms margin accommodates latency spikes.</p>
+
+<h3 id="ros-2-integration">ROS 2 Integration</h3>
+
+<ul>
+  <li>
+<strong>Sensor subscriber</strong>: joint states, IMU, proprioceptive observations (best-effort QoS)</li>
+  <li>
+<strong>Timer callback</strong>: triggers inference at configured control frequency (200–500 Hz)</li>
+  <li>
+<strong>Action publisher</strong>: pre-allocated messages, zero dynamic allocation</li>
+  <li>
+<strong>NITROS</strong>: zero-copy GPU tensor transfer between nodes (Isaac ROS)</li>
+</ul>
+
+<hr>
+
+<h2 id="rl-algorithms">RL Algorithms</h2>
+
+<p>Four deep RL algorithms serve as candidate training methods for both the controller and adversary:</p>
+
+<div style="overflow-x: auto; margin: 20px 0;">
+  <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <thead>
+      <tr style="background: #2196F3; color: white;">
+        <th style="padding: 12px; text-align: left;">Algorithm</th>
+        <th style="padding: 12px; text-align: center;">Type</th>
+        <th style="padding: 12px; text-align: center;">Key Feature</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>DDPG</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Off-policy, Deterministic</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Deterministic policy gradient + replay buffer</td>
+      </tr>
+      <tr style="background: #f9f9f9;">
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>TD3</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Off-policy, Deterministic</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Twin critics, delayed updates, target smoothing</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>SAC</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Off-policy, Stochastic</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Maximum entropy + automatic temperature tuning</td>
+      </tr>
+      <tr style="background: #f9f9f9;">
+        <td style="padding: 12px; border-bottom: 1px solid #eee;"><strong>PPO</strong></td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">On-policy, Stochastic</td>
+        <td style="padding: 12px; text-align: center; border-bottom: 1px solid #eee;">Clipped surrogate objective, GAE</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr>
+
+<h2 id="comparison-with-prior-work">Comparison with Prior Work</h2>
+
+<div style="overflow-x: auto; margin: 20px 0;">
+  <table style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <thead>
+      <tr style="background: #333; color: white;">
+        <th style="padding: 12px; text-align: left;">Feature</th>
+        <th style="padding: 12px; text-align: center;">RARL</th>
+        <th style="padding: 12px; text-align: center;">SA-MDP</th>
+        <th style="padding: 12px; text-align: center;">Domain Rand.</th>
+        <th style="padding: 12px; text-align: center; background: #1976D2;">Ours</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #eee;">Adversarial training</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">Yes</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">Yes</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">--</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold;">Yes</td>
+      </tr>
+      <tr style="background: #f9f9f9;">
+        <td style="padding: 10px; border-bottom: 1px solid #eee;">Dual-policy mixing</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">--</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">--</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">--</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold;">Yes</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #eee;">Runtime detection</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">--</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">--</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">--</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold;">Yes</td>
+      </tr>
+      <tr style="background: #f9f9f9;">
+        <td style="padding: 10px; border-bottom: 1px solid #eee;">Transformer detector</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">--</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">--</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">--</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold;">Yes</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #eee;">TensorRT deployment</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">--</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">--</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">--</td>
+        <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold;">Yes</td>
+      </tr>
+      <tr style="background: #f9f9f9;">
+        <td style="padding: 10px;">ROS 2 integration</td>
+        <td style="padding: 10px; text-align: center;">--</td>
+        <td style="padding: 10px; text-align: center;">--</td>
+        <td style="padding: 10px; text-align: center;">--</td>
+        <td style="padding: 10px; text-align: center; font-weight: bold;">Yes</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr>
+
+<h2 id="evaluation-plan">Evaluation Plan</h2>
+
+<h3 id="benchmark-environments-mujoco--gymnasium">Benchmark Environments (MuJoCo / Gymnasium)</h3>
+
+<ul>
+  <li>
+<strong>HalfCheetah-v4</strong>: 17-dim obs, 6-dim action</li>
+  <li>
+<strong>Walker2d-v4</strong>: 17-dim obs, 6-dim action</li>
+  <li>
+<strong>Ant-v4</strong>: 27-dim obs, 8-dim action</li>
+  <li>
+<strong>Humanoid-v4</strong>: 376-dim obs, 17-dim action</li>
+</ul>
+
+<p>Disturbances: random external forces, parameter perturbation ($\pm$30%), and additive observation noise.</p>
+
+<h3 id="planned-ablation-studies">Planned Ablation Studies</h3>
+
+<ol>
+  <li>
+<strong>No adversary</strong> – nominal policy only (performance ceiling, robustness floor)</li>
+  <li>
+<strong>No transformer detector</strong> – fixed $\alpha = 0.5$ (value of runtime awareness)</li>
+  <li>
+<strong>Hard switching vs. soft mixing</strong> – binary $\alpha \in {0,1}$ vs. continuous blending</li>
+  <li>
+<strong>Window length</strong> – $L \in {8, 16, 32, 64}$ (detection accuracy vs. compute)</li>
+  <li>
+<strong>Adversary budget</strong> – vary $\epsilon$ for robustness-performance Pareto frontier</li>
+  <li>
+<strong>Single vs. population adversary</strong> – generalization to unseen disturbances</li>
+</ol>
+
+<h3 id="baselines">Baselines</h3>
+
+<ul>
+  <li>SAC/TD3 (nominal)</li>
+  <li>RARL (single robust policy, no gating)</li>
+  <li>SA-MDP (state-adversarial, no gating)</li>
+  <li>Domain Randomization (no adversary, no gating)</li>
+</ul>
+
+<hr>
+
+<h2 id="technology-stack">Technology Stack</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Tools</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Training</strong></td>
+      <td>PyTorch, Gymnasium, MuJoCo (planned: JAX + MJX)</td>
+    </tr>
+    <tr>
+      <td><strong>RL Algorithms</strong></td>
+      <td>DDPG, TD3, SAC, PPO (zero-sum MARL variants)</td>
+    </tr>
+    <tr>
+      <td><strong>Detection</strong></td>
+      <td>Transformer encoder (causal attention, ~50k params)</td>
+    </tr>
+    <tr>
+      <td><strong>Export</strong></td>
+      <td>ONNX (opset 17), TensorRT (FP16/INT8)</td>
+    </tr>
+    <tr>
+      <td><strong>Deployment</strong></td>
+      <td>NVIDIA Jetson Orin, CUDA streams, ROS 2 Humble</td>
+    </tr>
+    <tr>
+      <td><strong>Data</strong></td>
+      <td>HDF5 / Apache Arrow, standardized logging spec</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2 id="status">Status</h2>
+
+<p>This project describes the full methodology and system design. Empirical results across all benchmark environments and on physical robot hardware are in progress and will be reported in a follow-up study.</p>
+
+<hr>
+
+<div align="center" style="margin: 40px 0;">
+  <p style="color: #666; font-style: italic;">Ongoing research at Fasta Robotics</p>
+</div>
+
+
+<!-- Comments only for posts -->
+
+
+            </article>
+        </main>
+
+        <footer>
+          <p class="copy">
+            <small> © Ali BaniAsad 2026
+                    | Powered by Jekyll and
+                    <a target="_blank" href="https://github.com/jitinnair1/gradfolio/" rel="noopener noreferrer">Gradfolio</a>.
+                    Last updated on 11 February 2026
+            </small>
+          </p>
+
+        <div class="rounded-social-buttons">
+<a title="" class="social-button email" itemprop="email" href="mailto:alibaniasad1999@gmail.com" target="_blank">
+<i class="far fa-envelope"></i>
+</a><a title="" class="social-button linkedin" href="https://www.linkedin.com/in/alibaniasad1999/" itemprop="sameAs" target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-linkedin-in"></i>
+</a><a title="" class="social-button google-scholar" itemprop="sameAs" href="https://scholar.google.com/citations?user=KeKpSvEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i>
+  </a><a class="social-button github" href="https://github.com/alibaniasad1999" title="" target="_blank" rel="noopener noopener noreferrer">
+  <i class="fab fa-github"></i>
+</a><a title="" class="social-button orcid" href="https://orcid.org/0009-0005-8094-1728" itemprop="sameAs" target="_blank" rel="noopener noreferrer">
+<i class="fab fa-orcid"></i>
+</a>
+</div>
+
+
+        </footer>
+
+        <!-- Google Analytics Tracking code -->
+<script src="https://cdn.jsdelivr.net/npm/ga-lite@1/dist/ga-lite.min.js" async></script>
+<script>
+var galite = galite || {};
+galite.UA = '';
+</script>
+
+        <script src="/assets/js/theme-toggle.js"></script>
+        <script src="/assets/js/particles.js"></script>
+
+    </body>
+
+</html>
