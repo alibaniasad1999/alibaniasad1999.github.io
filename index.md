@@ -15,13 +15,9 @@ The social-icons footer can be used to link profiles from GitHub, OrcID and Reas
 
 PS: If you liked the theme, do star it on GitHub! -->
 
-I am Ali BaniAsad, an M.Sc. graduate in Aerospace Engineering from **Sharif University of Technology** and currently a **Robotics Engineer at Fasta Robotics**, where I develop multi-rotor autopilot systems with embedded reinforcement learning and real-time control software. **I am actively seeking PhD positions** in robust reinforcement learning, robotics, and embedded AI.
+I am **Ali BaniAsad**, a Robotics Engineer at **Fasta Robotics** and M.Sc. graduate from **Sharif University of Technology**, building robust reinforcement learning controllers for real-time robotic systems on embedded GPUs. **Actively seeking PhD positions.**
 
-My research focuses on **zero-sum Markov games** and **adversarial training** for robust control, **transformer-based disturbance detection**, and **real-time deployment** of learned policies on embedded GPU platforms (NVIDIA Jetson) via TensorRT and ROS 2. I am experienced in deep RL algorithms (DDPG, TD3, SAC, PPO), multi-agent systems, differential game theory, and bridging the sim-to-real gap for robotic systems.
-
-**Research Interests:** Robust RL, Zero-Sum Games, Adversarial Training, Transformer-Based Anomaly Detection, Sim-to-Real Transfer, Embedded ML, Real-Time Control, ROS 2
-
-Feel free to explore my work and get in touch.
+**Interests:** Robust RL · Zero-Sum Games · Adversarial Training · Sim-to-Real · Embedded AI · ROS 2
 
 <!-- ### Also, check out:
 

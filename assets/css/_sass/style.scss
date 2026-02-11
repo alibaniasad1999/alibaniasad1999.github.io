@@ -272,6 +272,46 @@ html.theme-light .theme-toggle {
   font-size: 1em;
 }
 
+/* Particle canvas – full-viewport background */
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Keep all content above the canvas */
+.post-headline,
+.post-description,
+.links.scroll {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Match html background to body for full-bleed canvas */
+html {
+  background-color: $body-bg;
+}
+html.theme-dark {
+  background-color: $body-bg-dark !important;
+}
+html.theme-light {
+  background-color: $body-bg !important;
+}
+
 /* Article list in blog and archive page */
 .article-list {
   margin: 1em 0;
