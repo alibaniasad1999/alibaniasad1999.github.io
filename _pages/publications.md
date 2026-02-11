@@ -5,36 +5,30 @@ permalink: /publications/
 published: true
 ---
 
-<div class="PublicationContainer">
-  <div class="gallery">
+# Publications
 
-  {% for pub in site.publication %}   {# ← reads from your `_publication/` folder #}
+---
 
-    {% assign link = pub.redirect
-                   | default: pub.url
-                   | prepend: site.baseurl
-                   | prepend: site.url %}
+{% assign pubs = site.publications | sort: "year" | reverse %}
+{% for pub in pubs %}
 
-    <div class="publicationTile">
-      {% if pub.redirect or pub.url %}
-        <a href="{{ link }}" target="_blank">
-      {% endif %}
-        <span>
-          <h2>{{ pub.title }}</h2>
-          <br/>
-          <p>
-            {{ pub.authors }}
-            {% if pub.journal %}, <em>{{ pub.journal }}</em>{% endif %}
-            {% if pub.conference %}, <em>{{ pub.conference }}</em>{% endif %}
-            {% if pub.year %}, {{ pub.year }}{% endif %}.
-          </p>
-        </span>
-      {% if pub.redirect or pub.url %}
-        </a>
-      {% endif %}
-    </div>
-
-  {% endfor %}
-
-  </div>
+<div style="margin-bottom: 1.8em;">
+  <h3 style="margin-bottom: 0.2em;">
+    {% if pub.redirect %}
+      <a href="{{ pub.redirect }}" target="_blank">{{ pub.title }}</a>
+    {% else %}
+      {{ pub.title }}
+    {% endif %}
+  </h3>
+  <p style="margin: 0.2em 0;">
+    {{ pub.authors }}
+  </p>
+  <p style="margin: 0.2em 0; font-style: italic;">
+    {% if pub.journal %}{{ pub.journal }}{% endif %}{% if pub.conference %}{{ pub.conference }}{% endif %}{% if pub.volume %}, vol. {{ pub.volume }}{% endif %}{% if pub.pages %}, pp. {{ pub.pages }}{% endif %}{% if pub.year %}, {{ pub.year }}{% endif %}.
+  </p>
+  {% if pub.content != "" %}
+  <p style="margin: 0.4em 0; font-size: 0.9em;">{{ pub.content | strip_html | truncatewords: 50 }}</p>
+  {% endif %}
 </div>
+
+{% endfor %}

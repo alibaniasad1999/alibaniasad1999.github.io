@@ -2,8 +2,6 @@
 layout: default
 ---
 
-<canvas id="particle-canvas"></canvas>
-
 {% if page.profile %}
     {% if page.profile.image %}
       <img class="profile {{ page.profile.align }}"  width="33.33%" src="{{ page.profile.image | prepend: '/assets/images/' | relative_url }}">
@@ -11,5 +9,3 @@ layout: default
 {% endif %}
 
 {{ content }}
-
-<script src="{{ '/assets/js/particles.js' | relative_url }}"></script>

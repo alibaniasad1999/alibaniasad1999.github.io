@@ -64,6 +64,9 @@ collections:
     output: true
     permalink: /projects/:name/
     sort_by: order          # Sort using the 'order' key in front-matter
+  publications:
+    output: false
+    sort_by: year
 
 # Sass
 sass:
