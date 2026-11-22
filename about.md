@@ -6,7 +6,7 @@ published: true
 ---
 
 
-I am an M.Sc. graduate from **Sharif University of Technology** specializing in robotics, reinforcement learning, and embedded machine learning. I am currently working as a **Robotics Engineer at Fasta Robotics** and **actively seeking PhD positions** in robust RL, adversarial training, and real-time embedded AI for robotic systems.
+I am an M.Sc. graduate from **Sharif University of Technology** specializing in robotics, reinforcement learning, and embedded machine learning. I am currently working as a **Robotics Engineer at Fasta Robotics**, developing control software for robotic arms, and I am an **incoming PhD student in Mechanical and Mechatronics Engineering at the University of Waterloo**, where I will work on robotic manipulation.
 
 My research centers on **robust control via zero-sum Markov games**, where a learned adversary probes the weaknesses of a control policy during training, yielding formal worst-case performance guarantees. I work on **dual-policy architectures** that blend optimal and robust policies using **transformer-based disturbance detection**, and on deploying these systems in real time on **NVIDIA Jetson** platforms through **TensorRT** and **ROS 2**.
 

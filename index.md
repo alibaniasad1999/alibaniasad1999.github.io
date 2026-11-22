@@ -15,7 +15,7 @@ The social-icons footer can be used to link profiles from GitHub, OrcID and Reas
 
 PS: If you liked the theme, do star it on GitHub! -->
 
-I am **Ali BaniAsad**, a Robotics Engineer at **Fasta Robotics** and M.Sc. graduate from **Sharif University of Technology**, building robust reinforcement learning controllers for real-time robotic systems on embedded GPUs. **Actively seeking PhD positions.**
+I am **Ali BaniAsad**, a Robotics Engineer at **Fasta Robotics** and M.Sc. graduate from **Sharif University of Technology**, building robust reinforcement learning controllers for real-time robotic systems on embedded GPUs. **Incoming PhD student in Mechanical and Mechatronics Engineering at the University of Waterloo.**
 
 **Interests:** Robust RL · Zero-Sum Games · Adversarial Training · Sim-to-Real · Embedded AI · ROS 2
 
