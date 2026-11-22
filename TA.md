@@ -10,7 +10,7 @@ published: true
 
 ---
 
-Since my third semester at Sharif University of Technology, I have been actively involved in teaching and mentoring students. I began as a Teaching Assistant (TA) for the Fundamentals of Programming (C/C++) course, where I assisted students in understanding programming fundamentals. Over the years, I served as a TA for several courses including Automatic Control, Control Lab, Dynamics, and Aircraft Design.
+From my third semester at Sharif University of Technology until I completed my master's degree in 2025, I taught and mentored students as a Teaching Assistant. I began as a TA for the Fundamentals of Programming (C/C++) course, where I assisted students in understanding programming fundamentals. Over the years, I served as a TA for several courses including Automatic Control, Control Lab, Dynamics, and Aircraft Design.
 
 
 <div style="text-align:center;">
