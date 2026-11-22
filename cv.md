@@ -20,13 +20,13 @@ Download CV
 </object> -->
 <p>
   <a
-    href="https://cdn.jsdelivr.net/gh/alibaniasad1999/CV@short_cv/Ali-Baniasad-CV/Ali-Baniasad-CV.pdf?v=20261122"
+    href="https://cdn.jsdelivr.net/gh/alibaniasad1999/CV@short_cv/Ali-Baniasad-CV/Ali-Baniasad-CV.pdf?v=20261122b"
     target="_blank"
     rel="noopener"
   >Download CV (PDF)</a>
 </p>
 <iframe
-  src="https://cdn.jsdelivr.net/gh/alibaniasad1999/CV@short_cv/Ali-Baniasad-CV/Ali-Baniasad-CV.pdf?v=20261122#view=FitH"
+  src="https://cdn.jsdelivr.net/gh/alibaniasad1999/CV@short_cv/Ali-Baniasad-CV/Ali-Baniasad-CV.pdf?v=20261122b#view=FitH"
   title="Ali Baniasad CV"
   style="width:100%; height:75vh; border:none;"
   loading="lazy"
